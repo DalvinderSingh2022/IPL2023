@@ -1,0 +1,93 @@
+.container .box {
+    margin: 2em 0 0.5em;
+    color: var(--black);
+    transform: scale(1.1);
+    width: calc(100% - 6em);
+    z-index: -9;
+    border: none;
+}
+
+.box .player-name {
+    bottom: -10px;
+    border-radius: 20px 20px 0 0;
+}
+
+.box .player-img {
+    filter: drop-shadow(0px 2px 4px var(--black));
+}
+
+.group {
+    width: calc(100% - 6em);
+    max-width: 480px;
+    border-radius: 30px;
+    background: radial-gradient(circle, var(--dark-grey), var(--grey));
+    box-shadow: 0 0 4px 2px var(--dark-grey);
+    position: relative;
+    padding: 0.4em 2em;
+}
+
+.container .group.head {
+    justify-content: center;
+    background: var(--grad);
+    color: var(--white);
+    padding: 1em 3em;
+}
+
+.group span {
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50px;
+    color: var(--white);
+    font-size: 1.4em;
+    background: var(--grad);
+    padding: 0 8px;
+}
+
+h2.heading {
+    margin: 0 0 2em;
+}
+
+.data {
+    width: 100%;
+    padding: 1em 0;
+}
+
+.data .group span {
+    background: transparent;
+    color: var(--black);
+    font-size: 2em;
+}
+
+.group span.rank-1 {
+    background: linear-gradient(90deg, gold 50%, yellow);
+}
+
+.group span.rank-2 {
+    background: linear-gradient(90deg, grey 50%, silver);
+}
+
+.group span.rank-3 {
+    background: linear-gradient(90deg, brown 50%, Sienna);
+}
+
+.options {
+    overflow: auto;
+    justify-content: start;
+}
+
+@media only screen and (max-width:640px) {
+    .group {
+        width: 100%;
+    }
+
+    .data {
+        flex-direction: column;
+        margin-left: -4em;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .second {
+        justify-content: flex-start;
+    }
+}

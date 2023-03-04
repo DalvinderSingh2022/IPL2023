@@ -1,0 +1,70 @@
+.container .team-logo {
+    width: calc(100% - 2em);
+    height: 140px;
+    z-index: -1;
+    border-radius: 12px;
+    border: none;
+    margin-bottom: -20px;
+}
+
+h2.header {
+    padding: 0 0 .5em;
+    white-space: normal;
+}
+
+.table .group {
+    width: calc(100% / 3 - 3em);
+    padding: 1em 0;
+    border-bottom: 2px solid var(--light);
+}
+
+.info .trophy {
+    background: linear-gradient(0deg, gold 50%, yellow);
+    border-radius: 40px;
+    padding: 0.8em 2em;
+    box-shadow: 0 0 8px 2px gold;
+}
+
+.info .table {
+    width: calc(100% - 2em);
+    padding: 0 1em 1em;
+}
+
+.table span {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: var(--white);
+}
+
+.table .draw {
+    background: #aaa;
+    box-shadow: 0 0 4px 2px #999;
+}
+
+.table .lose {
+    background: #f34b4b;
+    box-shadow: 0 0 4px 2px #f34b4b;
+}
+
+.table .won {
+    background: #57b162;
+    box-shadow: 0 0 4px 2px #57b162;
+}
+
+@media only screen and (max-width: 640px) {
+    .table:first-of-type {
+        flex-direction: column;
+    }
+
+    .table .group {
+        width: auto;
+        margin: -0.5em 0;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .second {
+        justify-content: flex-start;
+    }
+}

@@ -1,0 +1,101 @@
+.options {
+    background: var(--light);
+    margin: 1em 1em -2em;
+    border-radius: 50px;
+    box-shadow: 0 0 6px 3px var(--light);
+}
+
+.dropdown {
+    gap: 0;
+    padding: 0.8em 1.6em;
+    position: relative;
+    border-radius: 50px;
+    color: var(--dark);
+    background: var(--white);
+}
+
+.drop {
+    height: 0;
+    top: 45px;
+    z-index: 99;
+    min-width: 100%;
+    overflow: auto;
+    max-height: 320px;
+    position: absolute;
+    border-radius: 5px;
+    color: var(--black);
+    background: var(--white);
+    justify-content: flex-start;
+}
+
+.dropdown:hover .drop {
+    padding: .5em;
+    height: fit-content;
+    box-shadow: 0 0 4px 2px var(--dark-grey);
+}
+
+.dropdown:hover i {
+    transition: .2s ease;
+    transform: rotate(180deg);
+}
+
+td {
+    overflow: hidden;
+    padding: 0;
+    max-height: 35px;
+}
+
+td img {
+    min-height: 350%;
+    margin: -10px 0 -52px;
+}
+
+tr:first-child img {
+    margin: 0 0 -12px;
+}
+
+table td span.rank {
+    padding: 0 18px 0 34px;
+    bottom: calc(50% - 45px);
+}
+
+td:nth-child(3) {
+    font-size: 1.8em;
+}
+
+table td span.rank.rank-1 {
+    background: linear-gradient(270deg, gold 50%, yellow);
+}
+
+table td span.rank.rank-2 {
+    background: linear-gradient(270deg, grey 50%, silver);
+}
+
+table td span.rank.rank-3 {
+    background: linear-gradient(270deg, brown 50%, #bf6338);
+}
+
+@media only screen and (max-width: 550px) {
+
+    td:nth-child(2),
+    th:nth-child(2) {
+        display: none;
+    }
+
+    table td span.rank {
+        padding: 0 12px;
+        left: calc(50% - 80px);
+        min-width: 16px;
+        height: 40px;
+        bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .options {
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 5px;
+        width: 100%;
+    }
+}

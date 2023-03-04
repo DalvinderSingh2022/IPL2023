@@ -1,0 +1,35 @@
+.options {
+    background: var(--white);
+    margin: 2em auto 1em;
+    width: fit-content;
+    border-radius: 50px;
+    width: 520px;
+    max-width: calc(100% - 4em);
+    box-shadow: 0 0 6px 3px var(--grey);
+}
+
+.search-area {
+    width: 100%;
+}
+
+.search-area button {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: var(--white);
+    box-shadow: 0 0 6px 2px var(--grey);
+    cursor: default;
+}
+
+.search-area input {
+    width: 100%;
+    cursor: auto;
+    border-radius: 24px;
+    padding: 8px 16px;
+    border: 2px solid var(--dark-grey);
+}
+
+.search-area input:focus {
+    border-color: var(--dark);
+}

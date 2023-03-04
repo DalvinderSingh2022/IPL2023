@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0606937758.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/players.css">
+    <script src="script/players.js" type="module" defer></script>
+    <title>IPL2023 | Players</title>
+</head>
+
+<body>
+    <nav class="flex j-evenly header">
+        <img src="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" class="logo" alt="logo">
+        <div class="flex inner links">
+            <a href="home.html" class="bottom">Home</a>
+            <a href="stats.html" class="bottom">Stats</a>
+            <a href="teams.html" class="bottom">Teams</a>
+            <a href="pointstable.html" class="bottom">Points Table</a>
+            <a href="players.html" class="bottom active">Players</a>
+            <a href="#" class="hidden menu"><i class="fa-solid fa-bars"></i></a>
+        </div>
+    </nav>
+    <div class="loading flex inner"><i class="fa-solid fa-spinner fa-spin"></i></div>
+    <div class="options flex nowrap">
+        <div class="search-area flex inner nowrap ">
+            <button class="flex inner"><i class="fas fa-search"></i></button>
+            <input type="text" placeholder="Player name">
+        </div>
+    </div>
+    <div class="players flex"></div>
+</body>
+
+</html>

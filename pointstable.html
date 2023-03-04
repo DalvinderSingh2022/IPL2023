@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0606937758.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/pointstable.js" type="module" defer></script>
+    <title>IPL2023 | Points Table</title>
+    <style>
+        @media only screen and (max-width: 1200px) {
+            .second {
+                justify-content: start;
+            }
+        }
+        @media only screen and (max-width: 680px) {
+            table {
+               table-layout: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="flex j-evenly header">
+        <img src="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" class="logo" alt="logo">
+        <div class="flex inner links">
+            <a href="home.html" class="bottom">Home</a>
+            <a href="stats.html" class="bottom">Stats</a>
+            <a href="teams.html" class="bottom">Teams</a>
+            <a href="pointstable.html" class="bottom active">Points Table</a>
+            <a href="players.html" class="bottom">Players</a>
+            <a href="#" class="hidden menu"><i class="fa-solid fa-bars"></i></a>
+        </div>
+    </nav>
+    <nav class="flex second nowrap nobar"></nav>
+    <div class="loading flex inner"><i class="fa-solid fa-spinner fa-spin"></i></div>
+    <div class="flex table-wrapper inner">
+        <table>
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Played</th>
+                    <th>Won</th>
+                    <th>Lose</th>
+                    <th>Draw</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+
+</html>

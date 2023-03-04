@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0606937758.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/home.css">
+    <script src="script/home.js" type="module" defer></script>
+    <title>IPL2023 | Home</title>
+</head>
+
+<body>
+    <nav class="flex j-evenly header">
+        <img src="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" class="logo" alt="logo">
+        <div class="flex inner links">
+            <a href="home.html" class="bottom active">Home</a>
+            <a href="stats.html" class="bottom">Stats</a>
+            <a href="teams.html" class="bottom">Teams</a>
+            <a href="pointstable.html" class="bottom">Points Table</a>
+            <a href="players.html" class="bottom">Players</a>
+            <a href="#" class="hidden menu"><i class="fa-solid fa-bars"></i></a>
+        </div>
+    </nav>
+    <div class="loading flex inner"><i class="fa-solid fa-spinner fa-spin"></i></div>
+    <div class="flex winner col">
+        <div class="flex nowrap nobar options">
+            <button class="bottom Points" data-sort="Points">Points</button>
+            <button class="bottom Runs" data-sort="Runs">Runs</button>
+            <button class="bottom Wicket" data-sort="Wicket">Wicket</button>
+            <button class="bottom Hundreds" data-sort="Hundreds">Hundreds</button>
+            <button class="bottom Sixes" data-sort="Sixes">Sixes</button>
+            <button class="bottom Fifties" data-sort="Fifties">Fifties</button>
+            <button class="bottom Fifers" data-sort="Fifers">Fifers</button>
+        </div>
+        <div class="flex stat"></div>
+    </div>
+    <div class="flex section">
+        <div class="heading flex">
+            <h2><span></span>Tournament in Numbers</h2>
+        </div>
+        <div class="flex numbers"></div>
+    </div>
+    <div class="flex section">
+        <div class="heading flex">
+            <h2><span></span>Captains</h2>
+        </div>
+        <div class="flex inner captains"></div>
+    </div>
+    <div class="flex section">
+        <div class="heading flex">
+            <h2><span></span>Top Performers</h2>
+        </div>
+        <div class="flex performers nowrap"></div>
+    </div>
+</body>
+
+</html>

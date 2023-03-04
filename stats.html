@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0606937758.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/stats.css">
+    <script src="script/stats.js" type="module" defer></script>
+    <title>IPL2023 | Stats</title>
+</head>
+
+<body>
+    <nav class="flex j-evenly header">
+        <img src="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" class="logo" alt="logo">
+        <div class="flex inner links">
+            <a href="home.html" class="bottom">Home</a>
+            <a href="stats.html" class="bottom active">Stats</a>
+            <a href="teams.html" class="bottom">Teams</a>
+            <a href="pointstable.html" class="bottom">Points Table</a>
+            <a href="players.html" class="bottom">Players</a>
+            <a href="#" class="hidden menu"><i class="fa-solid fa-bars"></i></a>
+        </div>
+    </nav>
+    <div class="flex">
+        <div class="flex options nobar">
+            <div class="flex dropdown col nowrap ">
+                <button class="flex inner j-evenly"><span class="batting-btn btn">Batting Stats</span><i class="fa-solid fa-angle-up"></i></button>
+                <div class="flex col drop nowrap inner">
+                    <button class="bottom Runs" data-order="decending" data-sort="BattingAvg Runs">Most Runs</button>
+                    <button class="bottom BatStrike" data-order="decending" data-sort="Runs StrikeRate">Best Strike Rate</button>
+                    <button class="bottom BatAvg" data-order="decending" data-sort="Runs BattingAvg">Best Batting Average</button>
+                    <button class="bottom Sixes" data-order="decending" data-sort="StrikeRate Sixes">Most Sixes</button>
+                    <button class="bottom Score" data-order="decending" data-sort="BattingAvg HighestScore">Highest Score</button>
+                    <button class="bottom Hundreds" data-order="decending" data-sort="Runs Hundreds">Most Hundreds</button>
+                    <button class="bottom Fifties" data-order="decending" data-sort="Runs Fifties">Most Fifties</button>
+                </div>
+            </div>
+            <div class="flex dropdown col nowrap">
+                <button class="flex inner j-evenly"><span class="bowling-btn btn">Bowling Stats</span> <i class="fa-solid fa-angle-up"></i></button>
+                <div class="flex col drop nowrap inner">
+                    <button class="bottom Wickets" data-order="decending" data-sort="Economy Wicket">Most Wickets</button>
+                    <button class="bottom Economy" data-order="assending" data-sort="BallsBowled Economy">Best Economy</button>
+                    <button class="bottom BowlAvg" data-order="assending" data-sort="BallsBowled BowlingAvg">Best Bowling Average</button>
+                    <button class="bottom BallStrike" data-order="assending" data-sort="Wicket BowlingStrike">Best Strike Rate</button>
+                    <button class="bottom Fifers" data-order="decending" data-sort="Wicket Fifers">Most Fifers</button>
+            </div>
+        </div>
+            <div class="dropdown flex col nowrap">
+                <button class="flex inner j-evenly"><span class="team-btn btn">ALL</span><i class="fa-solid fa-angle-up"></i></button>
+                <div class="flex col drop nowrap inner teams">
+                    <button class="bottom active" data-team="all">All Teams</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loading flex inner"><i class="fa-solid fa-spinner fa-spin"></i></div>
+    <div class="flex table-wrapper inner">
+        <table></table>
+    </div>
+</body>
+
+</html>

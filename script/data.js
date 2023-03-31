@@ -154,7 +154,15 @@ var Players = [
         TeamLogo: "csk",
         Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/1.png",
         Role: "Wicketkeeper Batter india captain",
-        Matches: []
+        Matches: [{
+            Runs: 50,
+            Ballsfaced: 25,
+            Sixes: 4,
+            NotOuts: true,
+            BallsBowled: 24,
+            RunsGiven: 24,
+            Wicket: 2,
+        }]
     },
     {
         FullName: "Ravindra Jadeja",

@@ -77,7 +77,7 @@ container.innerHTML = html;
 
 LoadPlayers(squad, document.querySelector(".squad"));
 
-Loadperformer(["BattingAvg", "Runs"], "Most Runs", currentTeam().Logo);
-Loadperformer(["Runs", "StrikeRate"], "Best StrikeRate", currentTeam().Logo);
-Loadperformer(["Economy", "Wicket"], "Most Wickets", currentTeam().Logo);
+Loadperformer(["BattingAvg", "Runs"], true, "Most Runs", currentTeam().Logo);
+Loadperformer(["Runs", "StrikeRate"], true, "Best StrikeRate", currentTeam().Logo);
+Loadperformer(["Economy", "Wicket"], true, "Most Wickets", currentTeam().Logo);
 Loadperformer(["BallsBowled", "Economy"], false, "Best Economy", currentTeam().Logo);

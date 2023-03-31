@@ -80,7 +80,7 @@ export function LoadPlayers(list, Parent, Length = list.length) {
     playerProfileEvent(playerBtns);
 };
 
-export function Loadperformer(keys, order = true, type, team = "all") {
+export function Loadperformer(keys, order, type, team = "all") {
     const player = SortList(keys, order, team)[0];
     const performer = document.createElement("div");
     performer.innerHTML = `

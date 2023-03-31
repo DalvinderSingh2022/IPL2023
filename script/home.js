@@ -69,11 +69,11 @@ for (const index in TeamInfo) {
 };
 LoadPlayers(captains, document.querySelector(".captains"))
 
-Loadperformer(["BattingAvg", "Runs"], "Most Runs");
-Loadperformer(["Runs", "StrikeRate"], "Best StrikeRate");
-Loadperformer(["Economy", "Wicket"], "Most Wickets");
+Loadperformer(["BattingAvg", "Runs"], true, "Most Runs");
+Loadperformer(["Runs", "StrikeRate"], true, "Best StrikeRate");
+Loadperformer(["Economy", "Wicket"], true, "Most Wickets");
 Loadperformer(["BallsBowled", "Economy"], false, "Best Economy");
-Loadperformer(["Runs", "BattingAvg"], "Best Average");
-Loadperformer(["StrikeRate", "Sixes"], "Most Sixes");
-Loadperformer(["BattingAvg", "HighestScore"], "HighestScore");
+Loadperformer(["Runs", "BattingAvg"], true, "Best Average");
+Loadperformer(["StrikeRate", "Sixes"], true, "Most Sixes");
+Loadperformer(["BattingAvg", "HighestScore"], true, "HighestScore");
 Loadperformer(["BallsBowled", "BowlingAvg"], false, "Best BowlingAvg");

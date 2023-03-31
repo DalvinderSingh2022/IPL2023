@@ -127,9 +127,9 @@ class NewTeam {
     Played = function () { return this.Matches.length };
     Points = function () { return this.Won() * 2 };
 }
-TeamInfo.push(new NewTeam([], "csk", "2010, 2011, 2018, 2021", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/CSK/logos/Medium/CSK.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/CSK/logos/Roundbig/CSKroundbig.png"));
+TeamInfo.push(new NewTeam([-1], "csk", "2010, 2011, 2018, 2021", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/CSK/logos/Medium/CSK.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/CSK/logos/Roundbig/CSKroundbig.png"));
 TeamInfo.push(new NewTeam([], "dc", "", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/DC/Logos/Medium/DC.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/DC/Logos/Roundbig/DCroundbig.png"));
-TeamInfo.push(new NewTeam([], "gt", "2022", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/GT/Logos/Medium/GTmedium.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/GT/Logos/Roundbig/GTroundbig.png"));
+TeamInfo.push(new NewTeam([1], "gt", "2022", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/GT/Logos/Medium/GTmedium.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/GT/Logos/Roundbig/GTroundbig.png"));
 TeamInfo.push(new NewTeam([], "kkr", "2012, 2014", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/KKR/Logos/Medium/KKR.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/KKR/Logos/Roundbig/KKRroundbig.png"));
 TeamInfo.push(new NewTeam([], "lsg", "", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/LSG/Logos/Medium/LSGmedium.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/LSG/Logos/Roundbig/LSGroundbig.png"));
 TeamInfo.push(new NewTeam([], "mi", "2013, 2015, 2017, 2019, 2020", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/MI/Logos/Medium/MI.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/MI/Logos/Roundbig/MIroundbig.png"));
@@ -154,49 +154,80 @@ var Players = [
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/57.png",
         Role: "Wicketkeeper Batter india captain",
-        Matches: []
+        Matches: [{
+            Runs: 14,
+            Ballsfaced: 7,
+            Sixes: 1,
+            NotOuts: true,
+        }]
     },
     {
         FullName: "Ravindra Jadeja",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/46.png",
         Role: " Allrounder india",
-        Matches: []
+        Matches: [{
+            Runs: 1,
+            Ballsfaced: 2,
+            BallsBowled: 24,
+            RunsGiven: 28,
+            Wicket: 1
+        }]
     },
     {
         FullName: "Deepak Chahar",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/91.png",
         Role: "Bowler india",
-        Matches: []
+        Matches: [{
+            BallsBowled: 24,
+            RunsGiven: 29,
+        }]
     },
     {
         FullName: "Ambati Rayudu",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/60.png",
         Role: "Wicketkeeper Batter india",
-        Matches: []
+        Matches: [{
+            Runs: 12,
+            Ballsfaced: 12,
+            Sixes: 1,
+        }]
     },
     {
         FullName: "Mitchell Santner",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/75.png",
         Role: "Allrounder",
-        Matches: []
+        Matches: [{
+            Runs: 1,
+            Ballsfaced: 3,
+            Notout : true,
+            BallsBowled: 24,
+            RunsGiven: 32
+        }]
     },
     {
         FullName: "Devon Conway",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/601.png",
         Role: " Batter",
-        Matches: []
+        Matches: [{
+            Runs: 1,
+            Ballsfaced: 6,
+        }]
     },
     {
         FullName: "Ruturaj Gaikwad",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/102.png",
         Role: " Batter india",
-        Matches: []
+        Matches: [{
+            Runs: 92,
+            Ballsfaced: 50,
+            Sixes: 9
+        }]
     },
     {
         FullName: "Subhranshu Senapati",
@@ -224,21 +255,33 @@ var Players = [
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/783.png",
         Role: " Bowler india",
-        Matches: []
+        Matches: [{
+            BallsBowled: 24,
+            RunsGiven: 36,
+            Wicket: 3,
+        }]
     },
     {
         FullName: "Moeen Ali",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/206.png",
         Role: " Allrounder",
-        Matches: []
+        Matches: [{
+            Runs: 23,
+            Ballsfaced: 17,
+            Sixes: 1
+        }]
     },
     {
         FullName: "Shivam Dube",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/211.png",
         Role: " Allrounder india",
-        Matches: []
+        Matches: [{
+            Runs: 19,
+            Ballsfaced: 18,
+            Sixes: 1
+        }]
     },
     {
         FullName: "Maheesh Theekshana",
@@ -280,14 +323,21 @@ var Players = [
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/539.png",
         Role: " Bowler india",
-        Matches: []
+        Matches: [{
+            BallsBowled: 20,
+            RunsGiven: 51,
+            Wicket: 1,
+        }]
     },
     {
         FullName: "Ben Stokes",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/177.png",
         Role: " Allrounder",
-        Matches: []
+        Matches: [{
+            Runs: 7,
+            Ballsfaced: 6,
+        }]
     },
     {
         FullName: "Matheesha Pathirana",
@@ -518,7 +568,11 @@ var Players = [
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/62.png",
         Role: " Batter india",
-        Matches: []
+        Matches: [{
+            Runs: 63,
+            Ballsfaced: 36,
+            Sixes: 3,
+        }]
     },
     {
         FullName: "Matthew Wade",
@@ -532,14 +586,21 @@ var Players = [
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/225.png",
         Role: " Wicketkeeper Batter india",
-        Matches: []
+        Matches: [{
+            Runs: 25,
+            Ballsfaced: 16,
+            Sixes: 2
+        }]
     },
     {
         FullName: "B. Sai Sudharsan",
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/976.png",
         Role: " Batter india",
-        Matches: []
+        Matches: [{
+            Runs: 22,
+            Ballsfaced: 17,
+        }]
     },
     {
         FullName: "Darshan Nalkande",
@@ -567,7 +628,12 @@ var Players = [
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/120.png",
         Role: " Allrounder india",
-        Matches: []
+        Matches: [{
+            Runs: 15,
+            Ballsfaced: 14,
+            Sixes: 1,
+            NotOuts: true,
+        }]
     },
     {
         FullName: "Shivam Mavi",
@@ -581,21 +647,33 @@ var Players = [
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/61.png",
         Role: " Allrounder india",
-        Matches: []
+        Matches: [{
+            Runs: 27,
+            Ballsfaced: 21,
+            Sixes: 1,
+        }]
     },
     {
         FullName: "Alzarri Joseph",
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/229.png",
         Role: " Bowler",
-        Matches: []
+        Matches: [{
+            BallsBowled: 24,
+            RunsGiven: 33,
+            Wicket: 2,
+        }]
     },
     {
         FullName: "Mohammad Shami",
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/47.png",
         Role: " Bowler india",
-        Matches: []
+        Matches: [{
+            BallsBowled: 24,
+            RunsGiven: 29,
+            Wicket: 2,
+        }]
     },
     {
         FullName: "Noor Ahmad",
@@ -616,14 +694,25 @@ var Players = [
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/218.png",
         Role: " Bowler",
-        Matches: []
+        Matches: [{
+            Runs: 10,
+            Ballsfaced: 3,
+            Sixes: 1,
+            NotOuts: true,
+            BallsBowled: 24,
+            RunsGiven: 26,
+            Wicket: 2,
+        }]
     },
     {
         FullName: "Yash Dayal",
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/978.png",
         Role: " Bowler india",
-        Matches: []
+        Matches: [{
+            BallsBowled: 6,
+            RunsGiven: 14,
+        }]
     },
     {
         FullName: "Kane Williamson",
@@ -637,7 +726,11 @@ var Players = [
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/678.png",
         Role: " Bowler",
-        Matches: []
+        Matches: [{
+            BallsBowled: 24,
+            RunsGiven: 41,
+            Wicket: 1,
+        }]
     },
     {
         FullName: "Mohit Sharma",
@@ -672,7 +765,12 @@ var Players = [
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/54.png",
         Role: "Allrounder india captain",
-        Matches: []
+        Matches: [{
+            Runs: 8,
+            Ballsfaced: 11,
+            BallsBowled: 18,
+            RunsGiven: 28,
+        }]
     },
     {
         FullName: "Rinku Singh",

@@ -152,183 +152,175 @@ var Players = [
     {
         FullName: "MS Dhoni",
         TeamLogo: "csk",
-        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/1.png",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/57.png",
         Role: "Wicketkeeper Batter india captain",
-        Matches: [{
-            Runs: 50,
-            Ballsfaced: 25,
-            Sixes: 4,
-            NotOuts: true,
-            BallsBowled: 24,
-            RunsGiven: 24,
-            Wicket: 2,
-        }]
+        Matches: []
     },
     {
         FullName: "Ravindra Jadeja",
         TeamLogo: "csk",
-        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/9.png",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/46.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Deepak Chahar",
         TeamLogo: "csk",
-        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/140.png",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/91.png",
         Role: "Bowler india",
         Matches: []
     },
     {
         FullName: "Ambati Rayudu",
         TeamLogo: "csk",
-        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/100.png",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/60.png",
         Role: "Wicketkeeper Batter india",
         Matches: []
     },
     {
         FullName: "Mitchell Santner",
         TeamLogo: "csk",
-        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/1903.png",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/75.png",
         Role: "Allrounder",
         Matches: []
     },
     {
         FullName: "Devon Conway",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/601.png",
         Role: " Batter",
         Matches: []
     },
     {
         FullName: "Ruturaj Gaikwad",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/102.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Subhranshu Senapati",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/971.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Dwaine Pretorius",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/289.png",
         Role: " Allrounder",
         Matches: []
     },
     {
         FullName: "K Bhagath Varma",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/577.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Rajvardhan Hangargekar",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/783.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Moeen Ali",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/206.png",
         Role: " Allrounder",
         Matches: []
     },
     {
         FullName: "Shivam Dube",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/211.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Maheesh Theekshana",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/629.png",
         Role: "Bowler",
         Matches: []
     },
     {
         FullName: "Mukesh Choudhary",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/970.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Prashant Solanki",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/972.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Simarjeet Singh",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/622.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Ajinkya Rahane",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/44.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Tushar Deshpande",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/539.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Ben Stokes",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/177.png",
         Role: " Allrounder",
         Matches: []
     },
     {
         FullName: "Matheesha Pathirana",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1014.png",
         Role: "Bowler",
         Matches: []
     },
     {
         FullName: "Shaik Rasheed",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/778.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Nishant Sindhu",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/791.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Kyle Jamieson",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/382.png",
         Role: " Bowler ",
         Matches: []
     },
     {
         FullName: "Ajay Mandal",
         TeamLogo: "csk",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1931.png",
         Role: " Allrounder india",
         Matches: []
     },
@@ -510,175 +502,175 @@ var Players = [
     {
         FullName: "Abhinav Manohar",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/974.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "David Miller",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/128.png",
         Role: " Batter",
         Matches: []
     },
     {
         FullName: "Shubman Gill",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/62.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Matthew Wade",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/549.png",
         Role: "Wicketkeeper Batter",
         Matches: []
     },
     {
         FullName: "Wriddhiman Saha",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/225.png",
         Role: " Wicketkeeper Batter india",
         Matches: []
     },
     {
         FullName: "B. Sai Sudharsan",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/976.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Darshan Nalkande",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/127.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Jayant Yadav",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/165.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Pradeep Sangwan",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/977.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Rahul Tewatia",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/120.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Shivam Mavi",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/154.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Vijay Shankar",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/61.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Alzarri Joseph",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/229.png",
         Role: " Bowler",
         Matches: []
     },
     {
         FullName: "Mohammad Shami",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/47.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Noor Ahmad",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/975.png",
         Role: " Bowler",
         Matches: []
     },
     {
         FullName: "Sai Kishore",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/544.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Rashid Khan",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/218.png",
         Role: " Bowler",
         Matches: []
     },
     {
         FullName: "Yash Dayal",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/978.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Kane Williamson",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/65.png",
         Role: " Batter",
         Matches: []
     },
     {
         FullName: "Joshua Little",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/678.png",
         Role: " Bowler",
         Matches: []
     },
     {
         FullName: "Mohit Sharma",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/100.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Odean Smith",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/863.png",
         Role: " Allrounder",
         Matches: []
     },
     {
         FullName: "K.S Bharat",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/365.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Urvil Patel",
         TeamLogo: "gt",
-        Image: "ipli",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1486.png",
         Role: " Wicketkeeper Batter india",
         Matches: []
     },
     {
         FullName: "Hardik Pandya",
         TeamLogo: "gt",
-        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/2740.png",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/54.png",
         Role: "Allrounder india captain",
         Matches: []
     },
@@ -721,7 +713,7 @@ var Players = [
         FullName: "Nitish Rana",
         TeamLogo: "kkr",
         Image: "ipli",
-        Role: " Batter india",
+        Role: " Batter india captain",
         Matches: []
     },
     {
@@ -833,7 +825,7 @@ var Players = [
         FullName: "Shreyas Iyer",
         TeamLogo: "kkr",
         Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/1563.png",
-        Role: "Batter india captain",
+        Role: "Batter india",
         Matches: []
     },
     {
@@ -1014,35 +1006,35 @@ var Players = [
     {
         FullName: "Dewald Brevis",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20593.png",
         Role: " Batter",
         Matches: []
     },
     {
         FullName: "Suryakumar Yadav",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/108.pngs",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Ishan Kishan",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/2975.png",
         Role: " Batter Wicketkeeper india",
         Matches: []
     },
     {
         FullName: "Arjun Tendulkar",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/10244.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Hrithik Shokeen",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20598.png",
         Role: " Bowler india",
         Matches: []
     },
@@ -1056,35 +1048,35 @@ var Players = [
     {
         FullName: "N. Tilak Varma",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20594.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Mohd. Arshad Khan",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20599.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Ramandeep Singh",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20595.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Tim David",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/4524.png",
         Role: " Batter",
         Matches: []
     },
     {
         FullName: "Jasprit Bumrah",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/1124.png",
         Role: " Bowler india",
         Matches: []
     },
@@ -1105,14 +1097,14 @@ var Players = [
     {
         FullName: "Kumar Kartikeya Singh",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20629.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Tristan Stubbs",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20631.png",
         Role: " Batter",
         Matches: []
     },
@@ -1126,7 +1118,7 @@ var Players = [
     {
         FullName: "Akash Madhwal",
         TeamLogo: "mi",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20681.png",
         Role: " Bowler india",
         Matches: []
     },
@@ -1182,105 +1174,105 @@ var Players = [
     {
         FullName: "Bhanuka Rajapaksa",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20604.png",
         Role: "  Batter",
         Matches: []
     },
     {
         FullName: "Jitesh Sharma",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/3185.png",
         Role: " Wicketkeeper Btter india",
         Matches: []
     },
     {
         FullName: "Jonny Bairstow",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/506.png",
         Role: " Batter Wicketkeeper",
         Matches: []
     },
     {
         FullName: "Prabhsimran Singh",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/5436.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Atharva Taide",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20603.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Harpreet Brar",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/5441.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Liam Livingstone",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/3644.png",
         Role: " Batter",
         Matches: []
     },
     {
         FullName: "Raj Angad Bawa",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20601.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Rishi Dhawan",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/1088.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Shahrukh Khan",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/7779.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Arshdeep Singh",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/4698.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Baltej Dhanda",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/20607.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Kagiso Rabada",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/1664.png",
         Role: " Bowler",
         Matches: []
     },
     {
         FullName: "Nathan Ellis",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/17118.png",
         Role: " Bowler ",
         Matches: []
     },
     {
         FullName: "Rahul Chahar",
         TeamLogo: "pk",
-        Image: "ipli",
+        Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/3763.png",
         Role: " Bowler india",
         Matches: []
     },
@@ -1334,17 +1326,178 @@ var Players = [
         Matches: []
     },
     {
-        FullName: "Varun",
-        TeamLogo: "rr",
-        Image: "ipli",
-        Role: " All india",
-        Matches: []
-    },
-    {
         FullName: "Sanju Samson",
         TeamLogo: "rr",
         Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/258.png",
         Role: "Wicketkeeper Batter india captain",
+        Matches: []
+    },
+    {
+        FullName: "Devdutt Padikkal",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Jos Buttler",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Batter Wicketkeeper",
+        Matches: []
+    },
+    {
+        FullName: "Shimron Hetmyer",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Batter",
+        Matches: []
+    },
+    {
+        FullName: "Yashasvi Jaiswal",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Dhruv Jurel",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Riyan Parag",
+        TeamLogo: "Donovan Ferreira",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Kunal Rathore",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Joe Root",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Ravichandran Ashwin",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Akash Vashisht",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Jason Holder",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Allrounder",
+        Matches: []
+    },
+    {
+        FullName: "Abdul P A",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "KC Cariappa",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Kuldeep Sen",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Kuldip Yadav",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Navdeep Saini",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Obed Macoy",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "KM Asif",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Prashid Krishna",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Sandeep Sharma",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Trent Boult",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Murugan Ashwin",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Yuzvendra Chahal",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Adam Zampa",
+        TeamLogo: "rr",
+        Image: "ipli",
+        Role: "Bowler india",
         Matches: []
     },
     {
@@ -1355,12 +1508,355 @@ var Players = [
         Matches: []
     },
     {
+        FullName: "Finn Allen",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Batter",
+        Matches: []
+    },
+    {
+        FullName: "Rajat Patidar",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Virat Kohli",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Anuj Rawat",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Dinesh Karthik",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Batter india Wicketkeeper",
+        Matches: []
+    },
+    {
+        FullName: "Suyash Prabhudessai",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Will Jacks",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Batter",
+        Matches: []
+    },
+    {
+        FullName: "David Willey",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Allrounder ",
+        Matches: []
+    },
+    {
+        FullName: "Glenn Maxwell",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Allrounder ",
+        Matches: []
+    },
+    {
+        FullName: "Mahipal Lamror",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Wanindu Hasaranga",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Allrounder ",
+        Matches: []
+    },
+    {
+        FullName: "Karn Sharma",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Michael Bracewell",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Sonu Yadav",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Manoj Bhandage",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Harshal Patel",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Shahbaz Ahamad",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Akash Deep",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Josh Hazlewood",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Bowler ",
+        Matches: []
+    },
+    {
+        FullName: "Siddharth Kaul",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "MOhammed Siraj",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Reece Topley",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Bowler ",
+        Matches: []
+    },
+    {
+        FullName: "Himanshu Sharma",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Rajan Kumar",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Avinash Singh",
+        TeamLogo: "rcb",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
         FullName: "Bhuvneshwar Kumar",
         TeamLogo: "srh",
         Image: "https://assets.iplt20.com/ipl/IPLHeadshot2022/116.png",
-        Role: "Bowler india captain",
+        Role: "Bowler india",
         Matches: []
-    }
+    },
+    {
+        FullName: "Abdul Samad",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Aiden Markram",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Batter india Wicketkeeper captain",
+        Matches: []
+    },
+    {
+        FullName: "Rahul Tripathi",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Glenn Phillip",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Batter",
+        Matches: []
+    },
+    {
+        FullName: "Harry Brook",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Batter ",
+        Matches: []
+    },
+    {
+        FullName: "Mayank Aggarwal",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Heinrich Klaasen",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Batter",
+        Matches: []
+    },
+    {
+        FullName: "Anmolpreet Singh",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Upendra Singh Yadav",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Nitish Kumar Reddy",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Batter india",
+        Matches: []
+    },
+    {
+        FullName: "Abhishek Sharma",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Marco Jansen",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Allrounder ",
+        Matches: []
+    },
+    {
+        FullName: "Washington Sundar",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Vivrant Sharma",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Mayank dagar",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Samarth Vyas",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Sanvir Singh",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Allrounder india",
+        Matches: []
+    },
+    {
+        FullName: "Fazalhaq Farooqi",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Bowler",
+        Matches: []
+    },
+    {
+        FullName: "Kartik Tyagi",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "T Natrajan",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Umran Malik",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Akeal Hosein",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Adil Rashid",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
+    {
+        FullName: "Mayank Markande",
+        TeamLogo: "srh",
+        Image: "ipli",
+        Role: "Bowler india",
+        Matches: []
+    },
 ];
 export var PlayerData = [];
 class NewPlayer {

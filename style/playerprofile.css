@@ -1,23 +1,26 @@
 .container .box {
-    margin: 2em 0 0.5em;
+    margin: 2em 0 -0.5em;
     color: var(--black);
-    transform: scale(1.1);
-    width: calc(100% - 6em);
+    width: calc(100% - 2em);
     z-index: -9;
     border: none;
+    height: fit-content;
 }
 
 .box .player-name {
-    bottom: -10px;
+    font-size: 1.6em;
     border-radius: 20px 20px 0 0;
 }
 
 .box .player-img {
-    filter: drop-shadow(0px 2px 4px var(--black));
+    position: relative;
+    transform: scale(1.4);
+    filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.4));
 }
 
 .group {
     width: calc(100% - 6em);
+    text-align: center;
     max-width: 480px;
     border-radius: 30px;
     background: radial-gradient(circle, var(--dark-grey), var(--grey));
@@ -26,48 +29,17 @@
     padding: 0.4em 2em;
 }
 
-.container .group.head {
-    justify-content: center;
-    background: var(--grad);
-    color: var(--white);
-    padding: 1em 3em;
-}
-
 .group span {
     height: 40px;
     min-width: 40px;
     border-radius: 50px;
-    color: var(--white);
-    font-size: 1.4em;
-    background: var(--grad);
     padding: 0 8px;
-}
-
-h2.heading {
-    margin: 0 0 2em;
-}
-
-.data {
-    width: 100%;
-    padding: 1em 0;
-}
-
-.data .group span {
-    background: transparent;
     color: var(--black);
     font-size: 2em;
 }
 
-.group span.rank-1 {
-    background: linear-gradient(90deg, gold 50%, yellow);
-}
-
-.group span.rank-2 {
-    background: linear-gradient(90deg, grey 50%, silver);
-}
-
-.group span.rank-3 {
-    background: linear-gradient(90deg, brown 50%, Sienna);
+h2.heading {
+    margin: 0 0 2em;
 }
 
 .options {
@@ -77,12 +49,13 @@ h2.heading {
 
 @media only screen and (max-width:640px) {
     .group {
-        width: 100%;
+        width: auto;
+        align-self: stretch;
     }
 
     .data {
         flex-direction: column;
-        margin-left: -4em;
+        margin: 0 -3em;
     }
 }
 

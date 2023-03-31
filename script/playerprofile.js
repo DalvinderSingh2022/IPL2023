@@ -1,5 +1,5 @@
 import { PlayerData } from "./data.js";
-import {activeButton, defaultImage, SortList } from "./index.js";
+import { activeButton, defaultImage, SortList } from "./index.js";
 
 const currentPlayer = function () {
     for (const index in PlayerData) {
@@ -9,32 +9,14 @@ const currentPlayer = function () {
     }
 }
 document.title = `IPL2023 | ${currentPlayer().TeamLogo.toUpperCase()} | ${currentPlayer().FullName}`;
+
 const container = document.querySelector(".container");
-var html = "";
-var rank = {};
 var bio = {
     Nationality: currentPlayer().IsIndian() ? "Indian" : "Overseas",
-    Role: currentPlayer().Role.replace("india","").replace("captain",""),
+    Role: currentPlayer().Role.replace("india", "").replace("captain", ""),
     Team: currentPlayer().Team()
 };
-
-rank.Runs = getRank(SortList(["Runs"]));
-rank.StrikeRate = getRank(SortList(["StrikeRate"]));
-rank.Wicket = getRank(SortList(["Wicket"]));
-rank.BattingAvg = getRank(SortList(["BattingAvg"]));
-rank.Sixes = getRank(SortList(["Sixes"]));
-rank.HighestScore = getRank(SortList(["HighestScore"]));
-rank.BowlingAvg = getRank(SortList(["BowlingAvg"]));
-rank.Economy = getRank(SortList(["Economy"]));
-function getRank(list) {
-    for (const index in list) {
-        if (currentPlayer().FullName == list[index].FullName) {
-            return parseInt(index) + 1;
-        }
-    }
-}
-
-html += `
+var html = `
 <div class="box team-logo team ${currentPlayer().TeamLogo} flex">
     <img src=${currentPlayer().Image} class="flex inner player-img">
     <span class="player-name text-center">${currentPlayer().FullName}</span>
@@ -55,36 +37,41 @@ for (const key in bio) {
         </div>`;
     }
 }
-if (currentPlayer().Matches.length) {
-    html += 
-    `<div class="group flex j-between nowrap head">
-        <h2>Ranks</h2>
-    </div>`;
-}
-for (const key in rank) {
-    if (Object.hasOwnProperty.call(rank, key) && rank[key]) {
-        html += `
-        <div class="group flex j-between nowrap">
-            <h2>${key}</h2>
-            <span class="flex rank-${rank[key]}">${rank[key] > 3 ? rank[key] : `<i class="fa-solid fa-medal"></i>`}</span>
-        </div>`;
-    }
-}
 html += `</div>`;
 container.innerHTML = html;
 container.querySelector(".player-img").onerror = () => {
     container.querySelector(".player-img").src = defaultImage;
 }
-for (const index in currentPlayer().Matches) {
-    document.querySelector(".options").innerHTML +=
-        `<button class="bottom" data-match="${parseInt(index)}">Match ${parseInt(index) + 1}</button>`;
-    const Buttons = document.querySelectorAll(".options button");
-    for (let index = 0; index < Buttons.length; index++) {
-        Buttons[index].onclick = () => {
-            activeButton(Buttons[index], Buttons);
-            loadStats(Buttons[index].getAttribute("data-match"));
+
+function loadRanks() {
+    const getRank = (list) => {
+        for (const index in list) {
+            if (currentPlayer().FullName == list[index].FullName) {
+                return parseInt(index) + 1;
+            }
         }
     }
+    var html = "";
+    var rank = {
+        Runs: getRank(SortList(["Runs"])),
+        StrikeRate: getRank(SortList(["StrikeRate"])),
+        Wicket: getRank(SortList(["Wicket"])),
+        BattingAvg: getRank(SortList(["BattingAvg"])),
+        Sixes: getRank(SortList(["Sixes"])),
+        HighestScore: getRank(SortList(["HighestScore"])),
+        BowlingAvg: getRank(SortList(["BowlingAvg"])),
+        Economy: getRank(SortList(["Economy"])),
+    }
+    for (const key in rank) {
+        if (Object.hasOwnProperty.call(rank, key)) {
+            html += `
+            <div class="group flex j-between nowrap">
+                <h2>${key}</h2>
+                <span class="flex inner">${rank[key] || NaN}</span>
+            </div>`;
+        }
+    }
+    document.querySelector(".ranks .data").innerHTML = html;
 }
 
 function loadStats(match) {
@@ -125,6 +112,19 @@ function loadStats(match) {
             </div>`;
         }
     }
-    document.querySelector(".data").innerHTML = html;
+    document.querySelector(".stats .data").innerHTML = html;
+}
+
+for (const index in currentPlayer().Matches) {
+    document.querySelector(".stats .options").innerHTML +=
+        `<button class="bottom" data-match="${parseInt(index)}">Match ${parseInt(index) + 1}</button>`;
+    const Buttons = document.querySelectorAll(".options button");
+    for (let index = 0; index < Buttons.length; index++) {
+        Buttons[index].onclick = () => {
+            activeButton(Buttons[index], Buttons);
+            loadStats(Buttons[index].getAttribute("data-match"));
+        }
+    }
 }
 loadStats(document.querySelectorAll(".options button")[0].getAttribute("data-match"));
+loadRanks();

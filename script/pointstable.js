@@ -5,7 +5,7 @@ const tbody = document.querySelector("tbody");
 
 secondNav();
 sortTeams();
-TeamInfo.sort((a, b) => { return b.Points() - a.Points() });
+TeamInfo.sort((a, b) => { return b.Points() - a.Points() }).sort((a, b) => { return b.Nrr - a.Nrr });
 
 for (const index in TeamInfo) {
     const teamTable = document.createElement("tr");
@@ -18,6 +18,7 @@ for (const index in TeamInfo) {
     <td>${TeamInfo[index].Won()}</td>
     <td>${TeamInfo[index].Lose()}</td>
     <td>${TeamInfo[index].Draw()}</td>
-    <td>${TeamInfo[index].Points()}</td>`;
+    <td>${TeamInfo[index].Points()}</td>
+    <td>${TeamInfo[index].Nrr}</td>`;
     tbody.appendChild(teamTable);
 }

@@ -46,12 +46,12 @@ td {
 }
 
 td img {
-    min-height: 350%;
-    margin: -10px 0 -52px;
+    min-height: 400%;
+    margin: -6px 0 -42px;
 }
 
 tr:first-child img {
-    margin: 0 0 -12px;
+    min-height: 520%;
 }
 
 table td span.rank {

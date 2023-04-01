@@ -342,6 +342,15 @@ nav.second {
     border: none;
 }
 
+.player-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
 .box {
     min-width: 245px;
     height: 260px;
@@ -379,18 +388,13 @@ nav.second {
 .box .player-name {
     position: absolute;
     bottom: -15px;
-    font-size: 1.4em;
-    padding: 0.5em 1em;
-    width: calc(100% - 2em);
     color: inherit;
+    width: calc(100% - 2em);
+    padding: 0.5em 1em;
     z-index: 9;
     border-radius: 40px;
     background: var(--white);
     box-shadow: 0 0 6px 2px var(--grey);
-    font-weight: bold;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .box .logos {

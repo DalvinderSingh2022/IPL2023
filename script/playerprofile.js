@@ -67,7 +67,7 @@ function loadRanks() {
             html += `
             <div class="group flex j-between nowrap">
                 <h2>${key}</h2>
-                <span class="flex inner">${rank[key] || NaN}</span>
+                <span class="flex inner">${rank[key] || 0}</span>
             </div>`;
         }
     }

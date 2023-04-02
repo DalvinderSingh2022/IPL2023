@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;600;800&family=Varela+Round&display=swap');
 
 :root {
-    --dark: #0164ab; /*19398a */
+    --dark: #0164ab;
+    /*19398a */
     --light: #367cd0;
     --white: #fbfbfb;
     --grey: #eee;
@@ -242,6 +243,14 @@ td {
     font-size: 1.3em;
     height: 80px;
     min-width: 100px;
+}
+
+td.red {
+    color: #f34b4b;
+}
+
+td.green {
+    color: #57b162;
 }
 
 td img {

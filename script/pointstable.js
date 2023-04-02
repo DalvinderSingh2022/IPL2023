@@ -8,8 +8,8 @@ sortTeams();
 TeamInfo.sort((a, b) => { return b.Points() - a.Points() }).sort((a, b) => { return b.Nrr - a.Nrr });
 
 for (const index in TeamInfo) {
-    const teamTable = document.createElement("tr");
-    teamTable.innerHTML = ` 
+    const team = document.createElement("tr");
+    team.innerHTML = ` 
     <td>
         <img src="${TeamInfo[index].Image.round.src}">
         <span class="team flex rank ${(TeamInfo[index].Qualified) ? "qualified" : ""}">${TeamInfo[index].Qualified ? `<i class="fa-solid fa-q"></i>` : parseInt(index) + 1}</span>
@@ -19,6 +19,6 @@ for (const index in TeamInfo) {
     <td>${TeamInfo[index].Lose()}</td>
     <td>${TeamInfo[index].Draw()}</td>
     <td>${TeamInfo[index].Points()}</td>
-    <td>${TeamInfo[index].Nrr}</td>`;
-    tbody.appendChild(teamTable);
+    <td class="${TeamInfo[index].Nrr < 0 ? "red" : "green"}">${TeamInfo[index].Nrr <= 0 ? TeamInfo[index].Nrr : "+" + TeamInfo[index].Nrr}</td>`;
+    tbody.appendChild(team);
 }

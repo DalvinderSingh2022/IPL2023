@@ -4,11 +4,15 @@ import { LoadPlayers } from "./index.js";
 document.querySelector("input").addEventListener("keyup", function () {
     var Result = [];
     var Search = this.value.toLowerCase().replaceAll(" ", "");
-    for (const index in PlayerData) {
-        var PlayerName = PlayerData[index].FullName.toLowerCase().replaceAll(" ", "");
-        if (PlayerName.includes(Search)) {
-            Result.push(PlayerData[index]);
+    if (Search) {
+        for (const index in PlayerData) {
+            var PlayerName = PlayerData[index].FullName.toLowerCase().replaceAll(" ", "");
+            if (PlayerName.includes(Search)) {
+                Result.push(PlayerData[index]);
+            }
         }
+    } else {
+        Result = PlayerData.sort(() => Math.random() - 0.5).slice(0, 10);
     }
     LoadPlayers(Result, document.querySelector(".players"));
     if (!Result.length) {

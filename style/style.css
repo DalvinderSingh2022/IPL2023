@@ -253,6 +253,11 @@ td.green {
     color: #57b162;
 }
 
+td.pointer:hover {
+    color: var(--dark);
+    text-decoration: none;
+}
+
 td img {
     height: 100%;
     position: relative;

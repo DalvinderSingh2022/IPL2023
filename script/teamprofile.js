@@ -28,7 +28,7 @@ for (const index in TeamInfo) {
     }
 }
 
-PlayerData.sort((a, b) => { return a.Matches.length - b.Matches.length });
+PlayerData.sort(() => Math.random() - 0.5);
 for (const index in PlayerData) {
     if (PlayerData[index].TeamLogo == currentTeam().Logo) {
         squad.push(PlayerData[index]);

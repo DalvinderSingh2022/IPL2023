@@ -61,6 +61,8 @@ function loadRanks() {
         HighestScore: getRank(SortList(["HighestScore"])),
         BowlingAvg: getRank(SortList(["BowlingAvg"])),
         Economy: getRank(SortList(["Economy"])),
+        Fours: getRank(SortList(["Fours"])),
+        Maidens: getRank(SortList(["Maidens"])),
     }
     for (const key in rank) {
         if (Object.hasOwnProperty.call(rank, key)) {
@@ -78,10 +80,10 @@ function loadStats(match) {
     var html = "";
     var stats = match >= 0 ? {
         Runs: currentPlayer().Matches[match].Runs || 0,
-        StrikeRate: currentPlayer().Matches[match].StrikeRate(),
+        StrikeRate: currentPlayer().Matches[match].StrikeRate || 0,
         Sixes: currentPlayer().Matches[match].Sixes || 0,
         Wicket: currentPlayer().Matches[match].Wicket || 0,
-        Economy: currentPlayer().Matches[match].Economy(),
+        Economy: currentPlayer().Matches[match].Economy || 0,
         BallsBowled: currentPlayer().Matches[match].BallsBowled || 0,
         Ballsfaced: currentPlayer().Matches[match].Ballsfaced || 0,
         RunsGiven: currentPlayer().Matches[match].RunsGiven || 0,
@@ -117,7 +119,7 @@ function loadStats(match) {
 
 for (const index in currentPlayer().Matches) {
     document.querySelector(".stats .options").innerHTML +=
-        `<button class="bottom" data-match="${parseInt(index)}">Match ${parseInt(index) + 1}</button>`;
+        `<button class="bottom" data-match="${index}">Match ${currentPlayer().Matches.length - index}</button>`;
     const Buttons = document.querySelectorAll(".options button");
     for (let index = 0; index < Buttons.length; index++) {
         Buttons[index].onclick = () => {

@@ -16,8 +16,10 @@ export function sortTeams() {
     });
 }
 
-export function SortList(keys, order = true, Team = "all") {
+export function SortList(keys, order, Team = "all") {
     sortPlayers();
+    // console.log(keys, order, Team);
+    // console.log(PlayerData[0].BallsBowled())
     var list = [];
     for (const key in keys) {
         list = PlayerData.sort((a, b) => { return order ? (b[keys[key]]() - a[keys[key]]()) : (a[keys[key]]() - b[keys[key]]()) });
@@ -82,6 +84,7 @@ export function LoadPlayers(list, Parent, Length = list.length) {
 
 export function Loadperformer(keys, order, type, team = "all") {
     const player = SortList(keys, order, team)[0];
+    if (!player) return
     const performer = document.createElement("div");
     performer.innerHTML = `
         <img class="team-image" src="${player.TeamImage().round.src}">
@@ -129,13 +132,6 @@ export const defaultImage = "https://www.iplt20.com/assets/images/default-headsh
         menuBtn.querySelector("i").classList.toggle("fa-bars");
         menuBtn.querySelector("i").classList.toggle("fa-xmark");
     }
-})();
-
-(() => {
-    window.addEventListener("load", () => {
-        document.querySelector(".loading").classList.add("hide");
-        document.querySelector("body").style.overflow = "auto";
-    })
 })();
 
 sortPlayers();

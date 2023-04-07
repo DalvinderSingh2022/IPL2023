@@ -79,5 +79,11 @@ LoadPlayers(squad, document.querySelector(".squad"));
 
 Loadperformer(["BattingAvg", "Runs"], true, "Most Runs", currentTeam().Logo);
 Loadperformer(["Runs", "StrikeRate"], true, "Best StrikeRate", currentTeam().Logo);
+Loadperformer(["Runs", "BattingAvg"], true, "Best Average", currentTeam().Logo);
+Loadperformer(["StrikeRate", "Sixes"], true, "Most Sixes", currentTeam().Logo);
+Loadperformer(["BattingAvg", "Fours"], true, "Fours", currentTeam().Logo);
+Loadperformer(["BattingAvg", "HighestScore"], true, "HighestScore", currentTeam().Logo);
 Loadperformer(["Economy", "Wicket"], true, "Most Wickets", currentTeam().Logo);
 Loadperformer(["BallsBowled", "Economy"], false, "Best Economy", currentTeam().Logo);
+Loadperformer(["BallsBowled", "BowlingAvg"], false, "Best BowlingAvg", currentTeam().Logo);
+Loadperformer(["Economy", "Maidens"], false, "Best Maidens", currentTeam().Logo);

@@ -7,14 +7,14 @@ var captains = [];
 var total = {
     Runs: 0,
     Sixes: 0,
-    Wicket: 0,
-    BallsBowled: 0,
-    Matches: 0,
+    Fours : 0,
     Fifties: 0,
     Hundreds: 0,
+    Wicket: 0,
+    BallsBowled: 0,
     Fifers: 0,
-    Teams: TeamInfo.length,
-    Players: PlayerData.length
+    Maidens: 0,
+    Matches: 0,
 }
 
 function LoadTeam(team, data) {
@@ -47,10 +47,12 @@ for (const index in PlayerData) {
     total.BallsBowled += PlayerData[index].BallsBowled();
     total.Runs += PlayerData[index].Runs();
     total.Sixes += PlayerData[index].Sixes();
+    total.Fours += PlayerData[index].Fours();
     total.Wicket += PlayerData[index].Wicket();
     total.Fifties += PlayerData[index].Fifties();
     total.Fifers += PlayerData[index].Fifers();
     total.Hundreds += PlayerData[index].Hundreds();
+    total.Maidens += PlayerData[index].Maidens();
     total.Matches += PlayerData[index].IsCaptain() ? PlayerData[index].Matches.length : 0;
 }
 
@@ -64,6 +66,7 @@ for (const key in total) {
     document.querySelector(".numbers").innerHTML += html;
 }
 
+sortTeams();
 for (const index in TeamInfo) {
     captains.push(TeamInfo[index].Captain());
 };
@@ -71,9 +74,11 @@ LoadPlayers(captains, document.querySelector(".captains"))
 
 Loadperformer(["BattingAvg", "Runs"], true, "Most Runs");
 Loadperformer(["Runs", "StrikeRate"], true, "Best StrikeRate");
-Loadperformer(["Economy", "Wicket"], true, "Most Wickets");
-Loadperformer(["BallsBowled", "Economy"], false, "Best Economy");
 Loadperformer(["Runs", "BattingAvg"], true, "Best Average");
 Loadperformer(["StrikeRate", "Sixes"], true, "Most Sixes");
+Loadperformer(["BattingAvg", "Fours"], true, "Fours");
 Loadperformer(["BattingAvg", "HighestScore"], true, "HighestScore");
+Loadperformer(["Economy", "Wicket"], true, "Most Wickets");
+Loadperformer(["BallsBowled", "Economy"], false, "Best Economy");
 Loadperformer(["BallsBowled", "BowlingAvg"], false, "Best BowlingAvg");
+Loadperformer(["Economy", "Maidens"], false, "Best Maidens");

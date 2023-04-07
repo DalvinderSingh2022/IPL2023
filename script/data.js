@@ -1,6 +1,7 @@
 export var TeamInfo = [];
 class NewTeam {
-    constructor(Matches, Nrr, Logo, ChampionsIn, src, round, qualified = false) {
+    constructor(id, Matches, Nrr, Logo, ChampionsIn, src, round, qualified = false) {
+        this.id = id;
         this.Logo = Logo;
         this.ChampionsIn = ChampionsIn;
         this.Matches = Matches;
@@ -25,7 +26,7 @@ class NewTeam {
                 return "Rajasthan Royals";
             case "mi":
                 return "Mumbai Indians";
-            case "pk":
+            case "pbks":
                 return "Punjab Kings";
             case "rcb":
                 return "Royal Challengers Bangalore";
@@ -116,6 +117,15 @@ class NewTeam {
         }
         return Fifties;
     }
+    Maidens() {
+        var Maidens = 0;
+        for (const index in PlayerData) {
+            if (PlayerData[index].TeamLogo == this.Logo) {
+                Maidens += PlayerData[index].Maidens()
+            }
+        }
+        return Maidens;
+    }
     Fifers() {
         var Fifers = 0;
         for (const index in PlayerData) {
@@ -128,26 +138,16 @@ class NewTeam {
     Played() { return this.Matches.length };
     Points() { return this.Won() * 2 };
 }
-TeamInfo.push(new NewTeam([-1], -0.514, "csk", "2010, 2011, 2018, 2021", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/CSK/logos/Medium/CSK.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/CSK/logos/Roundbig/CSKroundbig.png"));
-TeamInfo.push(new NewTeam([-1], -2.5, "dc", "", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/DC/Logos/Medium/DC.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/DC/Logos/Roundbig/DCroundbig.png"));
-TeamInfo.push(new NewTeam([1], 0.514, "gt", "2022", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/GT/Logos/Medium/GTmedium.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/GT/Logos/Roundbig/GTroundbig.png"));
-TeamInfo.push(new NewTeam([-1], -0.438, "kkr", "2012, 2014", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/KKR/Logos/Medium/KKR.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/KKR/Logos/Roundbig/KKRroundbig.png"));
-TeamInfo.push(new NewTeam([1], 2.5, "lsg", "", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/LSG/Logos/Medium/LSGmedium.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/LSG/Logos/Roundbig/LSGroundbig.png"));
-TeamInfo.push(new NewTeam([-1], -1.981, "mi", "2013, 2015, 2017, 2019, 2020", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/MI/Logos/Medium/MI.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/MI/Logos/Roundbig/MIroundbig.png"));
-TeamInfo.push(new NewTeam([1], 0.438, "pk", "", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/PBKS/Logos/Medium/PBKS.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/PBKS/Logos/Roundbig/PBKSroundbig.png"));
-TeamInfo.push(new NewTeam([1], 3.6, "rr", "2008", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/RR/Logos/Medium/RR.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/RR/Logos/Roundbig/RRroundbig.png"));
-TeamInfo.push(new NewTeam([1], 1.981, "rcb", "", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/RCB/Logos/Medium/RCB.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/RCB/Logos/Roundbig/RCBroundbig.png"));
-TeamInfo.push(new NewTeam([-1], -3.6, "srh", "2016", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/SRH/Logos/Medium/SRH.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/SRH/Logos/Roundbig/SRHroundbig.png"));
-
-// {
-//     Runs: 50,
-//     Ballsfaced: 25,
-//     Sixes: 4,
-//     NotOuts: true,
-//     BallsBowled: 24,
-//     RunsGiven: 24,
-//     Wicket: 2,
-// }
+TeamInfo.push(new NewTeam(28544, [-1, 1], 0.036, "csk", "2010, 2011, 2018, 2021", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/CSK/logos/Medium/CSK.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/CSK/logos/Roundbig/CSKroundbig.png"));
+TeamInfo.push(new NewTeam(28572, [-1], -2.5, "dc", "", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/DC/Logos/Medium/DC.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/DC/Logos/Roundbig/DCroundbig.png"));
+TeamInfo.push(new NewTeam(28537, [1], 0.514, "gt", "2022", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/GT/Logos/Medium/GTmedium.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/GT/Logos/Roundbig/GTroundbig.png"));
+TeamInfo.push(new NewTeam(28558, [-1], -0.438, "kkr", "2012, 2014", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/KKR/Logos/Medium/KKR.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/KKR/Logos/Roundbig/KKRroundbig.png"));
+TeamInfo.push(new NewTeam(28565, [1, -1], 0.950, "lsg", "", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/LSG/Logos/Medium/LSGmedium.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/LSG/Logos/Roundbig/LSGroundbig.png"));
+TeamInfo.push(new NewTeam(28600, [-1], -1.981, "mi", "2013, 2015, 2017, 2019, 2020", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/MI/Logos/Medium/MI.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/MI/Logos/Roundbig/MIroundbig.png"));
+TeamInfo.push(new NewTeam(28551, [1], 0.438, "pbks", "", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/PBKS/Logos/Medium/PBKS.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/PBKS/Logos/Roundbig/PBKSroundbig.png"));
+TeamInfo.push(new NewTeam(28586, [1], 3.6, "rr", "2008", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/RR/Logos/Medium/RR.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/RR/Logos/Roundbig/RRroundbig.png"));
+TeamInfo.push(new NewTeam(28593, [1], 1.981, "rcb", "", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/RCB/Logos/Medium/RCB.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/RCB/Logos/Roundbig/RCBroundbig.png"));
+TeamInfo.push(new NewTeam(28579, [-1], -3.6, "srh", "2016", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/SRH/Logos/Medium/SRH.png", "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/SRH/Logos/Roundbig/SRHroundbig.png"));
 
 var Players = [
     {
@@ -181,6 +181,7 @@ var Players = [
     },
     {
         FullName: "Deepak Chahar",
+        SecondName: "D Chahar",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/91.png",
         Role: "Bowler india",
@@ -267,6 +268,7 @@ var Players = [
     },
     {
         FullName: "Rajvardhan Hangargekar",
+        SecondName: "RS Hangargekar",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/783.png",
         Role: " Bowler india",
@@ -665,6 +667,13 @@ var Players = [
         Matches: []
     },
     {
+        FullName: "Abishek Porel",
+        TeamLogo: "dc",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/.png",
+        Role: "Wicketkeeper Batter india",
+        Matches: []
+    },
+    {
         FullName: "Abhinav Manohar",
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/974.png",
@@ -712,7 +721,7 @@ var Players = [
         ]
     },
     {
-        FullName: "B. Sai Sudharsan",
+        FullName: "Sai Sudharsan",
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/976.png",
         Role: " Batter india",
@@ -792,7 +801,7 @@ var Players = [
         ]
     },
     {
-        FullName: "Mohammad Shami",
+        FullName: "Mohammed Shami",
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/47.png",
         Role: " Bowler india",
@@ -1180,6 +1189,7 @@ var Players = [
     },
     {
         FullName: "Krishnappa Gowtham",
+        SecondName: "K Gowtham",
         TeamLogo: "lsg",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/179.png",
         Role: " Allrounder india",
@@ -1217,6 +1227,7 @@ var Players = [
     },
     {
         FullName: "Kyle Mayers",
+        SecondName: "K Mayers",
         TeamLogo: "lsg",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/726.png",
         Role: " Allrounder",
@@ -1259,7 +1270,8 @@ var Players = [
     {
         FullName: "Mark Wood",
         TeamLogo: "lsg",
-        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/987.png",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/315.png",
+
         Role: " Bowler ",
         Matches: [
             {
@@ -1633,7 +1645,8 @@ var Players = [
     },
     {
         FullName: "Bhanuka Rajapaksa",
-        TeamLogo: "pk",
+        SecondName: "B Rajapaksa",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/372.png",
         Role: "  Batter",
         Matches: [
@@ -1646,7 +1659,7 @@ var Players = [
     },
     {
         FullName: "Jitesh Sharma",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1000.png",
         Role: " Wicketkeeper Btter india",
         Matches: [
@@ -1659,21 +1672,21 @@ var Players = [
     },
     {
         FullName: "Jonny Bairstow",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/216.png",
         Role: " Batter Wicketkeeper",
         Matches: []
     },
     {
         FullName: "Matthew William Short",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/2032.png",
         Role: " Batter",
         Matches: []
     },
     {
         FullName: "Prabhsimran Singh",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/137.png",
         Role: " Batter india",
         Matches: [
@@ -1686,14 +1699,14 @@ var Players = [
     },
     {
         FullName: "Atharva Taide",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1001.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Harpreet Brar",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/130.png",
         Role: " Bowler india",
         Matches: [
@@ -1705,21 +1718,21 @@ var Players = [
     },
     {
         FullName: "Liam Livingstone",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/183.png",
         Role: " Batter",
         Matches: []
     },
     {
         FullName: "Raj Angad Bawa",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/781.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Rishi Dhawan",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/996.png",
         Role: " Allrounder india",
         Matches: [
@@ -1731,7 +1744,7 @@ var Players = [
     },
     {
         FullName: "Shahrukh Khan",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/590.png",
         Role: " Batter india",
         Matches: [
@@ -1744,7 +1757,7 @@ var Players = [
     },
     {
         FullName: "Arshdeep Singh",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/125.png",
         Role: " Bowler india",
         Matches: [
@@ -1757,21 +1770,21 @@ var Players = [
     },
     {
         FullName: "Baltej Dhanda",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/994.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Kagiso Rabada",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/116.png",
         Role: " Bowler",
         Matches: []
     },
     {
         FullName: "Nathan Ellis",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/633.png",
         Role: " Bowler ",
         Matches: [
@@ -1784,7 +1797,7 @@ var Players = [
     },
     {
         FullName: "Rahul Chahar",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/171.png",
         Role: " Bowler india",
         Matches: [
@@ -1797,7 +1810,7 @@ var Players = [
     },
     {
         FullName: "Sam Curran",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/138.png",
         Role: " Allrounder",
         Matches: [
@@ -1814,7 +1827,7 @@ var Players = [
     },
     {
         FullName: "Sikandar Raza",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/820.png",
         Role: " Allrounder",
         Matches: [
@@ -1830,35 +1843,35 @@ var Players = [
     },
     {
         FullName: "Harpreet Bhatia",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1934.png",
         Role: " Batter india",
         Matches: []
     },
     {
         FullName: "Vidwath Kaverappa",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1564.png",
         Role: " Bowler india",
         Matches: []
     },
     {
         FullName: "Mohit Rathee",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1935.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Shivam Singh",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1936.png",
         Role: " Allrounder india",
         Matches: []
     },
     {
         FullName: "Shikhar Dhawan",
-        TeamLogo: "pk",
+        TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/11.png",
         Role: "Batter captain india",
         Matches: [
@@ -2246,6 +2259,7 @@ var Players = [
     },
     {
         FullName: "Michael Bracewell",
+        SecondName: "M Bracewell",
         TeamLogo: "rcb",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1465.png",
         Role: "Allrounder india",
@@ -2285,7 +2299,7 @@ var Players = [
         ]
     },
     {
-        FullName: "Shahbaz Ahamad",
+        FullName: "Shahbaz Ahmed",
         TeamLogo: "rcb",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/523.png",
         Role: "Bowler india",
@@ -2319,7 +2333,7 @@ var Players = [
         Matches: []
     },
     {
-        FullName: "MOhammed Siraj",
+        FullName: "Mohammed Siraj",
         TeamLogo: "rcb",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/63.png",
         Role: "Bowler india",
@@ -2333,6 +2347,7 @@ var Players = [
     },
     {
         FullName: "Reece Topley",
+        SecondName: "R Topley",
         TeamLogo: "rcb",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/574.png",
         Role: "Bowler ",
@@ -2438,7 +2453,7 @@ var Players = [
         ]
     },
     {
-        FullName: "Mayank Aggarwal",
+        FullName: "Mayank Agarwal",
         TeamLogo: "srh",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/55.png",
         Role: "Batter india",
@@ -2559,7 +2574,7 @@ var Players = [
         Matches: []
     },
     {
-        FullName: "T Natrajan",
+        FullName: "T Natarajan",
         TeamLogo: "srh",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/224.png",
         Role: "Bowler india",
@@ -2620,13 +2635,13 @@ var Players = [
 ];
 export var PlayerData = [];
 class NewPlayer {
-    constructor({ FullName, TeamLogo, Image, Role, Matches }) {
+    constructor({ FullName, SecondName, TeamLogo, Image, Role, Matches }) {
         this.FullName = FullName;
+        this.SecondName = SecondName;
         this.TeamLogo = TeamLogo;
         this.Image = Image;
         this.Role = Role;
         this.Matches = [];
-        Matches.forEach(match => this.Matches.push(new NewMatch(match)));
     }
     IsKeeper() {
         return this.Role.toLowerCase().replaceAll(" ", "").includes("keeper");
@@ -2686,6 +2701,15 @@ class NewPlayer {
             }
         }
         return Sixes;
+    };
+    Fours() {
+        var Fours = 0;
+        for (const index in this.Matches) {
+            if (this.Matches[index].Fours) {
+                Fours += this.Matches[index].Fours;
+            }
+        }
+        return Fours;
     };
     StrikeRate() {
         if (this.Runs()) {
@@ -2790,6 +2814,15 @@ class NewPlayer {
         }
         return Wicket;
     };
+    Maidens() {
+        var Maidens = 0;
+        for (const index in this.Matches) {
+            if (this.Matches[index].Maidens) {
+                Maidens += this.Matches[index].Maidens;
+            }
+        }
+        return Maidens;
+    };
     Team() {
         for (const index in TeamInfo) {
             if (this.TeamLogo == TeamInfo[index].Logo) {
@@ -2804,29 +2837,124 @@ class NewPlayer {
             }
         }
     }
-}
-class NewMatch {
-    constructor({ Runs, Ballsfaced, Sixes, NotOuts, BallsBowled, RunsGiven, Wicket }) {
-        this.Runs = Runs;
-        this.Ballsfaced = Ballsfaced;
-        this.Sixes = Sixes;
-        this.NotOuts = NotOuts;
-        this.BallsBowled = BallsBowled;
-        this.RunsGiven = RunsGiven;
-        this.Wicket = Wicket;
-    }
-    StrikeRate() {
-        if (this.Runs) {
-            return ((this.Runs / this.Ballsfaced) * 100).toFixed(2);
-        }
-        return 0;
-    }
-    Economy() {
-        if (this.BallsBowled) {
-            return ((this.RunsGiven / this.BallsBowled) * 6).toFixed(2);
-        }
-        return 0;
-    }
-}
+    updateBatStats({ balls, fours, outDesc, runs, sixes, strikeRate }, id) {
+        const index = this.matchIndex(id) != undefined ? this.matchIndex(id) : this.Matches.length;
+        this.Matches[index] = this.matchIndex(id) != undefined ? this.Matches[index] : {};
+        this.Matches[index].Id = id;
 
+        this.Matches[index].Runs = runs;
+        this.Matches[index].Ballsfaced = balls;
+        this.Matches[index].Sixes = sixes;
+        this.Matches[index].NotOuts = outDesc.toLowerCase().replaceAll(" ", "").includes("notout");
+        this.Matches[index].StrikeRate = strikeRate;
+        this.Matches[index].Fours = fours;
+    }
+    updateBowlStats({ overs, economy, maidens, runs, wickets }, id) {
+        const index = this.matchIndex(id) != undefined ? this.matchIndex(id) : this.Matches.length;
+        this.Matches[index] = this.matchIndex(id) != undefined ? this.Matches[index] : {};
+        this.Matches[index].Id = id;
+
+        this.Matches[index].BallsBowled = ((parseInt(overs) * 6) + parseInt((overs * 10) % 10));
+        this.Matches[index].Economy = economy;
+        this.Matches[index].Maidens = maidens;
+        this.Matches[index].RunsGiven = runs;
+        this.Matches[index].Wicket = wickets;
+    }
+    matchIndex(id) {
+        for (let index = 0; index < this.Matches.length; index++) {
+            if (this.Matches[index].Id == id) {
+                return index;
+            }
+        }
+    }
+}
 Players.forEach(player => PlayerData.push(new NewPlayer(player)));
+
+//fetching matches and statsfor each match 
+(() => {
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '468381f4fcmsh34b3449547a652dp14453cjsna2bb93345db8',
+            'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
+        }
+    };
+    if (!localStorage.getItem("cricbuzz")) {
+        fetch('https://cricbuzz-cricket.p.rapidapi.com/series/v1/5945', options)
+            .then(response => response.json())
+            .then(response => {
+                var matchesId = [];
+                response.matchDetails.forEach(async (day) => {
+                    if (day.matchDetailsMap) {
+                        (day.matchDetailsMap.match).forEach(async (match) => {
+                            if (match.matchScore) {
+                                matchesId.push(match.matchInfo.matchId);
+                            }
+                        })
+                    }
+                });
+                localStorage.setItem("cricbuzz", JSON.stringify(response));
+                setTimeout(loadMatchesScorecard, 3000, matchesId, 0);
+            })
+            .catch(err => console.error(err));
+    }
+    function loadMatchesScorecard(ids, index) {
+        if (index < ids.length) {
+            fetch(`https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/${ids[index]}/scard`, options)
+                .then(response => response.json())
+                .then(response => {
+                    if (!localStorage.getItem("matches")) {
+                        localStorage.setItem("matches", JSON.stringify(response));
+                    } else {
+                        const matches = Array.from(JSON.parse(localStorage.getItem("matches")));
+                        matches.push(response);
+                        localStorage.setItem("matches", JSON.stringify(matches));
+                    }
+                }).catch(err => console.error(err));
+            setTimeout(loadMatchesScorecard, 3000, ids, ++index);
+        }
+    }
+})();
+
+//updating players stats from LS
+(() => {
+    if (localStorage.getItem("matches")) {
+        JSON.parse(localStorage.getItem("matches")).forEach(match => {
+            match.scoreCard.forEach(innings => {
+                findPlayer(innings.batTeamDetails.batsmenData, innings.batTeamDetails.batTeamShortName, innings, "batName")
+                findPlayer(innings.bowlTeamDetails.bowlersData, innings.bowlTeamDetails.bowlTeamShortName, innings, "bowlName");
+            })
+        });
+    }
+    function findPlayer(players, team, innings, nameType) {
+        const playerNameObj = {}
+        for (let name in players) {
+            const apiPlayerName = players[name][`${nameType}`].toLowerCase().replaceAll(" ", "");
+            playerNameObj[name] = players[name];
+            for (const index in PlayerData) {
+                const PlayerName = PlayerData[index].FullName.toLowerCase().replaceAll(" ", "");
+                const PlayerSecondName = PlayerData[index].SecondName ? PlayerData[index].SecondName.toLowerCase().replaceAll(" ", "") : "";
+
+                if ((PlayerName.includes(apiPlayerName) ||
+                    (!PlayerName.includes(apiPlayerName) && PlayerSecondName.includes(apiPlayerName)))
+                    && team.toLowerCase() == PlayerData[index].TeamLogo) {
+
+                    (nameType == "batName") ?
+                        PlayerData[index].updateBatStats(players[name], innings.matchId) :
+                        PlayerData[index].updateBowlStats(players[name], innings.matchId);
+                    playerNameObj[name] = undefined;
+                }
+            }
+        }
+        //print players not found in Playersdata
+        for (let Name in playerNameObj) {
+            if (playerNameObj[Name]) {
+                console.log(playerNameObj[Name]);
+            }
+        }
+    }
+    window.addEventListener("load", () => {
+        document.querySelector(".loading").classList.add("hide");
+        document.querySelector("body").style.overflow = "auto";
+    });
+})();

@@ -2,7 +2,6 @@
 
 :root {
     --dark: #0164ab;
-    /*19398a */
     --light: #367cd0;
     --white: #fbfbfb;
     --grey: #eee;
@@ -54,16 +53,16 @@
     border-color: #003B7A;
 }
 
-.team.pk,
-.team.pk::after {
+.team.pbks,
+.team.pbks::after {
     background: linear-gradient(180deg, #D71920, #84171B);
     border-color: #84171B;
 }
 
 .team.rr,
 .team.rr::after {
-    background: linear-gradient(180deg, #EA1A85, #001D48);
-    border-color: #001D48;
+    background: linear-gradient(180deg, #9f0e9d, #17157a);
+    border-color: #17157a;
 }
 
 .team.rcb,
@@ -80,8 +79,8 @@
 
 .team.lsg,
 .team.lsg::after {
-    background: linear-gradient(180deg, #FFCC00, #A72056);
-    border-color: #A72056;
+    background: linear-gradient(180deg, #034cc6, #0b3384);
+    border-color: #0b3384;
 }
 
 .team.gt,

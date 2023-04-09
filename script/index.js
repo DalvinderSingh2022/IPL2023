@@ -1,4 +1,4 @@
-import { PlayerData, TeamInfo } from "./data.js";
+import { PlayerData, TeamInfo, loadData } from "./data.js";
 
 export function sortPlayers() {
     PlayerData.sort((a, b) => {
@@ -10,16 +10,14 @@ export function sortPlayers() {
 
 export function sortTeams() {
     TeamInfo.sort((a, b) => {
-        if (a.Team() < b.Team()) return -1;
-        if (a.Team() > b.Team()) return 1;
+        if (a.Team < b.Team) return -1;
+        if (a.Team > b.Team) return 1;
         return 0;
     });
 }
 
 export function SortList(keys, order, Team = "all") {
     sortPlayers();
-    // console.log(keys, order, Team);
-    // console.log(PlayerData[0].BallsBowled())
     var list = [];
     for (const key in keys) {
         list = PlayerData.sort((a, b) => { return order ? (b[keys[key]]() - a[keys[key]]()) : (a[keys[key]]() - b[keys[key]]()) });
@@ -109,12 +107,12 @@ export function Loadperformer(keys, order, type, team = "all") {
 export function secondNav() {
     for (const index in TeamInfo) {
         const option = document.createElement("div");
-        option.innerHTML = `<img src=${TeamInfo[index].Image.round.src} class="pointer">`;
+        option.innerHTML = `<img src=${TeamInfo[index].Image().round.src} class="pointer">`;
         option.classList = "team-box bottom";
         option.querySelector("img").onclick = (e) => {
             for (const i in TeamInfo) {
-                if (e.target.src.includes(TeamInfo[i].Image.round.src)) {
-                    localStorage.setItem("profileTeam", JSON.stringify(TeamInfo[i].Team()));
+                if (e.target.src.includes(TeamInfo[i].Image().round.src)) {
+                    localStorage.setItem("profileTeam", JSON.stringify(TeamInfo[i].Team));
                     location.assign("teamprofile.html");
                 }
             }
@@ -134,5 +132,6 @@ export const defaultImage = "https://www.iplt20.com/assets/images/default-headsh
     }
 })();
 
+loadData();
 sortPlayers();
 sortTeams();

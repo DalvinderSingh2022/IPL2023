@@ -14,7 +14,7 @@ var total = {
     BallsBowled: 0,
     Fifers: 0,
     Maidens: 0,
-    Matches: 0,
+    Teams: TeamInfo.length,
 }
 
 function LoadTeam(team, data) {
@@ -24,7 +24,7 @@ function LoadTeam(team, data) {
         <div class="flex col logos">
             <span class="team ${team.Logo} flex inner">${data}</span>
         </div>
-        <img class="team ${team.Logo} team-img" src="${team.Image.round.src}">`;
+        <img class="team ${team.Logo} team-img" src="${team.Image().round.src}">`;
     document.querySelector(".winner .stat").append(Team);
 }
 
@@ -53,7 +53,6 @@ for (const index in PlayerData) {
     total.Fifers += PlayerData[index].Fifers();
     total.Hundreds += PlayerData[index].Hundreds();
     total.Maidens += PlayerData[index].Maidens();
-    total.Matches += PlayerData[index].IsCaptain() ? PlayerData[index].Matches.length : 0;
 }
 
 for (const key in total) {
@@ -81,4 +80,4 @@ Loadperformer(["BattingAvg", "HighestScore"], true, "HighestScore");
 Loadperformer(["Economy", "Wicket"], true, "Most Wickets");
 Loadperformer(["BallsBowled", "Economy"], false, "Best Economy");
 Loadperformer(["BallsBowled", "BowlingAvg"], false, "Best BowlingAvg");
-Loadperformer(["Economy", "Maidens"], false, "Best Maidens");
+Loadperformer(["Economy", "Maidens"], true, "Best Maidens");

@@ -87,6 +87,8 @@ function loadStats(match) {
         BallsBowled: currentPlayer().Matches[match].BallsBowled || 0,
         Ballsfaced: currentPlayer().Matches[match].Ballsfaced || 0,
         RunsGiven: currentPlayer().Matches[match].RunsGiven || 0,
+        Fours: currentPlayer().Matches[match].Fours || 0,
+        Maidens: currentPlayer().Matches[match].Maidens || 0,
     } : {
         Runs: currentPlayer().Runs(),
         StrikeRate: currentPlayer().StrikeRate(),
@@ -103,7 +105,9 @@ function loadStats(match) {
         Fifties: currentPlayer().Fifties(),
         Hundreds: currentPlayer().Hundreds(),
         Fifers: currentPlayer().Fifers(),
-        BowlingStrike: currentPlayer().BowlingStrike()
+        BowlingStrike: currentPlayer().BowlingStrike(),
+        Fours: currentPlayer().Fours(),
+        Maidens: currentPlayer().Maidens(),
     };
     for (const key in stats) {
         if (Object.hasOwnProperty.call(stats, key)) {
@@ -119,7 +123,7 @@ function loadStats(match) {
 
 for (const index in currentPlayer().Matches) {
     document.querySelector(".stats .options").innerHTML +=
-        `<button class="bottom" data-match="${index}">Match ${currentPlayer().Matches.length - index}</button>`;
+        `<button class="bottom" data-match="${index}">Match ${1 + Number(index)}</button>`;
     const Buttons = document.querySelectorAll(".options button");
     for (let index = 0; index < Buttons.length; index++) {
         Buttons[index].onclick = () => {

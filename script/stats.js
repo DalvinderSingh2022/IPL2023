@@ -58,7 +58,7 @@ for (let index = 0; index < Buttons.length; index++) {
 
 for (const index in TeamInfo) {
     document.querySelector(".teams").innerHTML += `
-    <button class="bottom" data-team="${TeamInfo[index].Logo}">${TeamInfo[index].Team()}</button>`;
+    <button class="bottom" data-team="${TeamInfo[index].Logo}">${TeamInfo[index].Team}</button>`;
 }
 const TeamButtons = document.querySelectorAll(".teams button");
 TeamButtons.forEach(button => {

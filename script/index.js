@@ -1,4 +1,4 @@
-import { PlayerData, TeamInfo, loadData } from "./data.js";
+import { PlayerData, TeamInfo } from "./data.js";
 
 export function sortPlayers() {
     PlayerData.sort((a, b) => {
@@ -132,6 +132,5 @@ export const defaultImage = "https://www.iplt20.com/assets/images/default-headsh
     }
 })();
 
-loadData();
 sortPlayers();
 sortTeams();

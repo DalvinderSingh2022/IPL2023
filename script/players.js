@@ -1,5 +1,6 @@
-import { PlayerData } from "./data.js";
+import { PlayerData, loadData } from "./data.js";
 import { LoadPlayers } from "./index.js";
+loadData();
 
 document.querySelector("input").addEventListener("keyup", function () {
     var Result = [];

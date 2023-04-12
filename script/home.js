@@ -1,5 +1,6 @@
-import { PlayerData, TeamInfo } from "./data.js";
+import { PlayerData, TeamInfo, loadData } from "./data.js";
 import { Loadperformer, activeButton, sortTeams, LoadPlayers } from "./index.js";
+loadData();
 
 const Buttons = document.querySelectorAll(".winner button");
 var background = Math.floor(Math.random() * TeamInfo.length);

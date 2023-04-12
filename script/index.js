@@ -18,9 +18,17 @@ export function sortTeams() {
 
 export function SortList(keys, order, Team = "all") {
     sortPlayers();
-    var list = [];
     for (const key in keys) {
-        list = PlayerData.sort((a, b) => { return order ? (b[keys[key]]() - a[keys[key]]()) : (a[keys[key]]() - b[keys[key]]()) });
+        if (keys.find(a => a == "HighestScore")) {
+            var list = PlayerData.sort((a, b) => { return Number((b.HighestScore() + "").replace("*", "")) - Number((a.HighestScore() + "").replace("*", "")) });
+        }
+        else if (keys.find(a => a == "BBM")) {
+            var list = PlayerData.sort((a, b) => { return a.BBM().split("/")[1] - b.BBM().split("/")[1] })
+                .sort((a, b) => { return b.BBM().split("/")[0] - a.BBM().split("/")[0] })
+                .filter(a => a.BBM().split("/")[0] != 0);
+        } else {
+            var list = PlayerData.sort((a, b) => { return order ? (b[keys[key]]() - a[keys[key]]()) : (a[keys[key]]() - b[keys[key]]()) });
+        }
     }
     return list.filter((a) => { return a[keys[keys.length - 1]]() })
         .filter((a) => { return a.TeamLogo == Team || Team == "all"; });

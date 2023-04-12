@@ -1870,20 +1870,15 @@ class NewPlayer {
         return 0;
     };
     BBM() {
-        var MostWicket = [];
-        var RunConcede;
+        var MostWicket = 0;
+        var RunConcede = 0;
         for (const index in this.Matches) {
-            if (this.Matches[index].Wicket || this.Matches[index].Wicket === 0) {
-                MostWicket.push(this.Matches[index].Wicket);
-            }
-        }
-        MostWicket.sort();
-        for (const index in this.Matches) {
-            if (this.Matches[index].Wicket == MostWicket[0]) {
+            if (this.Matches[index].Wicket > MostWicket) {
+                MostWicket = this.Matches[index].Wicket;
                 RunConcede = this.Matches[index].RunsGiven;
             }
         }
-        return (MostWicket[0] || MostWicket[0] === 0) ? `${MostWicket[0]}/${RunConcede}` : "0/0";
+        return MostWicket + "/" + RunConcede;
     };
     Wicket() {
         var Wicket = 0;

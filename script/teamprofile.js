@@ -1,5 +1,5 @@
-import { PlayerData, TeamInfo } from "./data.js";
-import { LoadPlayers, Loadperformer, secondNav, } from "./index.js";
+import { TeamInfo } from "./data.js";
+import { LoadPlayers, Loadperformer, secondNav} from "./index.js";
 
 const currentTeam = function () {
     for (const index in TeamInfo) {
@@ -10,8 +10,7 @@ const currentTeam = function () {
 }
 document.title = "IPL2023 | " + currentTeam().Team;
 const container = document.querySelector(".container");
-var html = "";
-var position = 0;
+var position;
 
 secondNav();
 document.querySelectorAll(".second img").forEach(image => {
@@ -27,7 +26,7 @@ for (const index in TeamInfo) {
     }
 }
 
-html += `
+var html = `
 <div class="team-logo team ${currentTeam().Logo} flex">
     <img src="${currentTeam().Image().round.src}">
 </div>

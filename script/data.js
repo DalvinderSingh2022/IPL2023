@@ -792,7 +792,7 @@ var Players = [
     {
         FullName: "Shreyas Iyer",
         TeamLogo: "kkr",
-        Image: "",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/12.png",
         Role: "Batter india",
     },
     {
@@ -1062,6 +1062,12 @@ var Players = [
         Role: " Bowler",
     },
     {
+        FullName: "Riley Meredith",
+        TeamLogo: "mi",
+        Image: "",
+        Role: " Bowler",
+    },
+    {
         FullName: "Nehal Wadhera",
         TeamLogo: "mi",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1541.png",
@@ -1153,7 +1159,7 @@ var Players = [
         Role: " Allrounder india",
     },
     {
-        FullName: "Rishi Dhawan",
+        FullName: "Rishi",
         TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/996.png",
         Role: " Allrounder india",
@@ -1281,7 +1287,7 @@ var Players = [
     {
         FullName: "Donovan Ferreira",
         TeamLogo: "rr",
-        Image: "",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/2033.png",
         Role: "Batter",
     },
     {
@@ -1317,7 +1323,7 @@ var Players = [
     {
         FullName: "Abdul P A",
         TeamLogo: "rr",
-        Image: "",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1542.png",
         Role: "Allrounder india",
     },
     {
@@ -1460,7 +1466,7 @@ var Players = [
         Role: "Allrounder ",
     },
     {
-        FullName: "Mahipal Lamror",
+        FullName: "Mahipal Lomror",
         TeamLogo: "rcb",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/184.png",
         Role: "Allrounder india",
@@ -2003,7 +2009,7 @@ function loadPlayersStats() {
             .sort((a, b) => { return a.matchHeader.matchStartTimestamp - b.matchHeader.matchStartTimestamp })
             .forEach(match => {
                 match.scoreCard.forEach(innings => {
-                    findPlayer(innings, "batName")
+                    findPlayer(innings, "batName");
                     findPlayer(innings, "bowlName");
                 });
             });
@@ -2022,25 +2028,32 @@ function findPlayer(innings, nameType) {
     for (let name in players) {
         const apiPlayerName = players[name][`${nameType}`].toLowerCase().replaceAll(" ", "");
         playerNameObj[name] = players[name];
-        for (const index in PlayerData) {
-            const PlayerName = PlayerData[index].FullName.toLowerCase().replaceAll(" ", "");
-            const PlayerSecondName = PlayerData[index].SecondName ? PlayerData[index].SecondName.toLowerCase().replaceAll(" ", "") : "";
 
-            if ((PlayerName.includes(apiPlayerName) ||
-                (!PlayerName.includes(apiPlayerName) && PlayerSecondName.includes(apiPlayerName)))
-                && team.toLowerCase() == PlayerData[index].TeamLogo) {
-
-                (nameType == "batName") ?
-                    PlayerData[index].updateBatStats(players[name], innings.matchId) :
-                    PlayerData[index].updateBowlStats(players[name], innings.matchId);
-                playerNameObj[name] = undefined;
-            }
+        if (playerByName(apiPlayerName, team)) {
+            (nameType == "batName") ?
+                playerByName(apiPlayerName, team).updateBatStats(players[name], innings.matchId) :
+                playerByName(apiPlayerName, team).updateBowlStats(players[name], innings.matchId);
+            playerNameObj[name] = undefined;
         }
     }
     //print players not found in Playersdata
     for (let Name in playerNameObj) {
         if (playerNameObj[Name]) {
             console.log(playerNameObj[Name]);
+        }
+    }
+}
+
+function playerByName(apiPlayer, team) {
+    for (const index in PlayerData) {
+        const PlayerName = PlayerData[index].FullName.toLowerCase().replaceAll(" ", "");
+        const PlayerSecondName = PlayerData[index].SecondName ? PlayerData[index].SecondName.toLowerCase().replaceAll(" ", "") : "";
+        const apiPlayerName = apiPlayer.toLowerCase().replaceAll(" ", "");
+
+        if ((PlayerName.includes(apiPlayerName) || apiPlayerName.includes(PlayerName) ||
+            (!PlayerName.includes(apiPlayerName) && PlayerSecondName.includes(apiPlayerName)))
+            && team.toLowerCase() == PlayerData[index].TeamLogo) {
+            return PlayerData[index];
         }
     }
 }

@@ -78,45 +78,26 @@ function loadRanks() {
 
 function loadStats(match) {
     var html = "";
-    var stats = match >= 0 ? {
-        Runs: currentPlayer().Matches[match].Runs || 0,
-        StrikeRate: currentPlayer().Matches[match].StrikeRate || 0,
-        Sixes: currentPlayer().Matches[match].Sixes || 0,
-        Wicket: currentPlayer().Matches[match].Wicket || 0,
-        Economy: currentPlayer().Matches[match].Economy || 0,
-        BallsBowled: currentPlayer().Matches[match].BallsBowled || 0,
-        Ballsfaced: currentPlayer().Matches[match].Ballsfaced || 0,
-        RunsGiven: currentPlayer().Matches[match].RunsGiven || 0,
-        Fours: currentPlayer().Matches[match].Fours || 0,
-        Maidens: currentPlayer().Matches[match].Maidens || 0,
-    } : {
-        Runs: currentPlayer().Runs(),
-        StrikeRate: currentPlayer().StrikeRate(),
-        BattingAvg: currentPlayer().BattingAvg(),
-        Sixes: currentPlayer().Sixes(),
-        HighestScore: currentPlayer().HighestScore(),
-        Wicket: currentPlayer().Wicket(),
-        Economy: currentPlayer().Economy(),
-        BowlingAvg: currentPlayer().BowlingAvg(),
-        BBM: currentPlayer().BBM(),
-        Ballsfaced: currentPlayer().Ballsfaced(),
-        BallsBowled: currentPlayer().BallsBowled(),
-        RunsGiven: currentPlayer().RunsGiven(),
-        Fifties: currentPlayer().Fifties(),
-        Hundreds: currentPlayer().Hundreds(),
-        Fifers: currentPlayer().Fifers(),
-        BowlingStrike: currentPlayer().BowlingStrike(),
-        Fours: currentPlayer().Fours(),
-        Maidens: currentPlayer().Maidens(),
-    };
-    for (const key in stats) {
-        if (Object.hasOwnProperty.call(stats, key)) {
-            html += `
-            <div class="group flex j-between nowrap">
-                <h2>${key}</h2>
-                <span class="flex inner">${stats[key]}</span>
-            </div>`;
+    if (match >= 0) {
+        for (const key in currentPlayer().Matches[match]) {
+            if (key != "Id" && Object.hasOwnProperty.call(currentPlayer().Matches[match], key)) {
+                html +=
+                    `<div class="group flex j-between nowrap">
+                        <h2>${key}</h2>
+                        <span class="flex inner">${currentPlayer().Matches[match][key]}</span>
+                    </div>`;
+            }
         }
+    } else {
+        Object.getOwnPropertyNames(Object.getPrototypeOf(currentPlayer()))
+            .filter(key => key !== "constructor" && key !== "updateBatStats" && key !== "updateBowlStats" && key !== "matchIndex" && key !== "getMatches")
+            .filter(key => typeof (currentPlayer()[key]) === 'function' && (typeof (currentPlayer()[key]()) === "number" || typeof (currentPlayer()[key]()) === "string"))
+            .map(key => {
+                html += `<div class="group flex j-between nowrap">
+                            <h2>${key}</h2>
+                            <span class="flex inner">${currentPlayer()[key]()}</span>
+                        </div>`;
+            })
     }
     document.querySelector(".stats .data").innerHTML = html;
 }

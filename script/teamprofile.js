@@ -79,3 +79,4 @@ Loadperformer(["Economy", "Wicket"], true, "Most Wickets", currentTeam().Logo);
 Loadperformer(["BallsBowled", "Economy"], false, "Best Economy", currentTeam().Logo);
 Loadperformer(["BallsBowled", "BowlingAvg"], false, "Best BowlingAvg", currentTeam().Logo);
 Loadperformer(["Economy", "Maidens"], true, "Best Maidens", currentTeam().Logo);
+Loadperformer(["BBM"], true, "Best Figures", currentTeam().Logo);

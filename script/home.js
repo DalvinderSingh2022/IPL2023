@@ -82,3 +82,4 @@ Loadperformer(["Economy", "Wicket"], true, "Most Wickets");
 Loadperformer(["BallsBowled", "Economy"], false, "Best Economy");
 Loadperformer(["BallsBowled", "BowlingAvg"], false, "Best BowlingAvg");
 Loadperformer(["Economy", "Maidens"], true, "Best Maidens");
+Loadperformer(["BBM"], true, "Best Figures");

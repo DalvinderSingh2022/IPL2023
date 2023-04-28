@@ -268,6 +268,7 @@ var Players = [
     },
     {
         FullName: "Maheesh Theekshana",
+        SecondName: "M Theekshana",
         TeamLogo: "csk",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/629.png",
         Role: "Bowler",
@@ -329,7 +330,7 @@ var Players = [
     {
         FullName: "Sisanda Magala",
         TeamLogo: "csk",
-        Image: "",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/745.png",
         Role: "Bowler",
     },
     {
@@ -465,7 +466,7 @@ var Players = [
         Role: " Bowler india",
     },
     {
-        FullName: "Phil Salt",
+        FullName: "Philip Salt",
         TeamLogo: "dc",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1220.png",
         Role: " Batter",
@@ -503,7 +504,7 @@ var Players = [
     {
         FullName: "Abishek Porel",
         TeamLogo: "dc",
-        Image: "",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1580.png",
         Role: "Wicketkeeper Batter india",
     },
     {
@@ -672,7 +673,7 @@ var Players = [
     {
         FullName: "Jason Roy",
         TeamLogo: "kkr",
-        Image: "",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/313.png",
         Role: " Batter",
     },
     {
@@ -702,7 +703,7 @@ var Players = [
     {
         FullName: "Shakib Al Hasan",
         TeamLogo: "kkr",
-        Image: "",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/222.png",
         Role: " Allrounder",
     },
     {
@@ -727,6 +728,12 @@ var Players = [
         FullName: "Mandeep Singh",
         TeamLogo: "kkr",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/132.png",
+        Role: " Batter india",
+    },
+    {
+        FullName: "Aarya Desai",
+        TeamLogo: "kkr",
+        Image: "",
         Role: " Batter india",
     },
     {
@@ -762,7 +769,7 @@ var Players = [
     {
         FullName: "Litton Das",
         TeamLogo: "kkr",
-        Image: "",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/251.png",
         Role: " Wicketkeeper Batter",
     },
     {
@@ -786,7 +793,7 @@ var Players = [
     {
         FullName: "Varun Chakaravarthy",
         TeamLogo: "kkr",
-        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/583.png",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/140.png",
         Role: " Bowler india",
     },
     {
@@ -930,7 +937,7 @@ var Players = [
         Role: " Allrounder india",
     },
     {
-        FullName: "Naveen Ul Haq",
+        FullName: "Naveen-Ul-Haq",
         TeamLogo: "lsg",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/639.png",
         Role: " Bowler",
@@ -1143,7 +1150,7 @@ var Players = [
     {
         FullName: "Gurnoor Singh Brar",
         TeamLogo: "pbks",
-        Image: "",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1231.png",
         Role: " Bowler india",
     },
     {
@@ -1213,7 +1220,7 @@ var Players = [
         Role: " Allrounder",
     },
     {
-        FullName: "Harpreet Bhatia",
+        FullName: "Harpreet Singh Bhatia",
         TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1934.png",
         Role: " Batter india",
@@ -1321,7 +1328,7 @@ var Players = [
         Role: "Allrounder",
     },
     {
-        FullName: "Abdul P A",
+        FullName: "Abdul Basith",
         TeamLogo: "rr",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1542.png",
         Role: "Allrounder india",
@@ -1436,7 +1443,7 @@ var Players = [
         Role: "Batter india Wicketkeeper",
     },
     {
-        FullName: "Suyash S Prabhudessai",
+        FullName: "Suyash Prabhudessai",
         TeamLogo: "rcb",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/598.png",
         Role: "Batter india",
@@ -1473,8 +1480,9 @@ var Players = [
     },
     {
         FullName: "Wanindu Hasaranga",
+        SecondName: "W Hasaranga",
         TeamLogo: "rcb",
-        Image: "",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/377.png",
         Role: "Allrounder ",
     },
     {
@@ -1482,6 +1490,12 @@ var Players = [
         TeamLogo: "rcb",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/98.png",
         Role: "Allrounder india",
+    },
+    {
+        FullName: "Vijaykumar Vyshak",
+        TeamLogo: "rcb",
+        Image: "",
+        Role: "Bowler india",
     },
     {
         FullName: "Michael Bracewell",

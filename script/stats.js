@@ -1,6 +1,5 @@
-import { TeamInfo, loadData } from "./data.js";
+import { TeamInfo } from "./data.js";
 import { playerProfileEvent, activeButton, SortList, defaultImage } from "./index.js";
-loadData();
 
 const table = document.querySelector("table");
 const tableHead = document.createElement("thead");

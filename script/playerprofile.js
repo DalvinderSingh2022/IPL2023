@@ -1,6 +1,5 @@
-import { PlayerData, loadData } from "./data.js";
+import { PlayerData } from "./data.js";
 import { activeButton, defaultImage, SortList } from "./index.js";
-loadData();
 
 const currentPlayer = function () {
     for (const index in PlayerData) {

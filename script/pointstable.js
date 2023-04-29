@@ -1,6 +1,5 @@
-import { TeamInfo, loadData } from "./data.js";
+import { TeamInfo } from "./data.js";
 import { secondNav, sortTeams } from "./index.js";
-loadData();
 
 const tbody = document.querySelector("tbody");
 

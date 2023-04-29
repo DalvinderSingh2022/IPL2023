@@ -1970,7 +1970,7 @@ class NewPlayer {
 export var PlayerData = [];
 Players.forEach(player => PlayerData.push(new NewPlayer(player)));
 
-export function loadData() {
+(function () {
     if (localStorage.getItem("ipl2023pt")) {
         var lastMatch = JSON.parse(localStorage.getItem("ipl2023matches"))[JSON.parse(localStorage.getItem("ipl2023matches")).length - 1]
         var nextMatchdate = new Date(Number(lastMatch.matchHeader.matchStartTimestamp));
@@ -1982,8 +1982,7 @@ export function loadData() {
         loadTeamsStats();
         loadPlayersStats();
     }
-}
-// localStorage.setItem("ipl2023matches", JSON.stringify(JSON.parse(localStorage.getItem("ipl2023matches")).splice(0, 38)))
+})();
 
 const options = {
     method: 'GET',

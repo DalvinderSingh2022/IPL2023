@@ -1,6 +1,5 @@
-import { TeamInfo, loadData } from "./data.js";
+import { TeamInfo } from "./data.js";
 import { teamProfileEvent } from "./index.js";
-loadData();
 
 const teamsInfoEl = document.querySelector(".teams-info");
 

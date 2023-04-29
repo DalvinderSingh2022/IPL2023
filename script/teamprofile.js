@@ -1,6 +1,5 @@
-import { TeamInfo, loadData } from "./data.js";
+import { TeamInfo } from "./data.js";
 import { LoadPlayers, Loadmatches, Loadperformer, secondNav } from "./index.js";
-loadData();
 
 const currentTeam = function () {
     for (const index in TeamInfo) {

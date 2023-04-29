@@ -62,6 +62,14 @@ export function activeButton(button, Buttons) {
     }
 }
 
+export function teamByLogo(Logo) {
+    for (const index in TeamInfo) {
+        if (Logo == TeamInfo[index].Logo) {
+            return TeamInfo[index];
+        }
+    }
+}
+
 export function LoadPlayers(list, Parent, Length = list.length) {
     Parent.innerHTML = "";
     for (let index = 0; index < Length; index++) {
@@ -111,6 +119,30 @@ export function Loadperformer(keys, order, type, team = "all") {
     const playerBtns = document.querySelector(".performers").querySelectorAll(".player-name");
     playerProfileEvent(playerBtns);
 };
+
+export function Loadmatches(matches) {
+    document.querySelector(".matches").innerHTML = "";
+    matches.forEach(match => {
+        const matchEl = document.createElement("div");
+        var WinnerLogo = [];
+        match.matchHeader.result.winningTeam.split(" ").map(word => { WinnerLogo.push(word.slice(0, -(word.length - 1))) });
+        if (WinnerLogo.join("") == "SH") WinnerLogo = ["S", "R", "H"];
+        if (WinnerLogo.join("") == "PK") WinnerLogo = ["P", "B", "K", "S"];
+
+        matchEl.innerHTML = `
+        <span class="name">${match.matchHeader.matchDescription}</span>
+        <div class="flex match inner">
+            <div class="teams nowrap flex inner">
+                <img src="${teamByLogo(match.matchHeader.matchTeamInfo[0].battingTeamShortName.toLowerCase()).Image().round.src}">
+                <span>VS</span>
+                <img src="${teamByLogo(match.matchHeader.matchTeamInfo[0].bowlingTeamShortName.toLowerCase()).Image().round.src}">
+            </div>
+        </div>
+        <div class="flex result">${match.status}</div>`;
+        matchEl.classList = ` flex match team ${WinnerLogo.join("").toLowerCase()}`;
+        document.querySelector(".matches").append(matchEl);
+    })
+}
 
 export function secondNav() {
     for (const index in TeamInfo) {

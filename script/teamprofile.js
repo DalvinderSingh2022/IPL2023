@@ -1,5 +1,5 @@
 import { TeamInfo, loadData } from "./data.js";
-import { LoadPlayers, Loadperformer, secondNav} from "./index.js";
+import { LoadPlayers, Loadmatches, Loadperformer, secondNav } from "./index.js";
 loadData();
 
 const currentTeam = function () {
@@ -80,3 +80,5 @@ Loadperformer(["BallsBowled", "Economy"], false, "Best Economy", currentTeam().L
 Loadperformer(["BallsBowled", "BowlingAvg"], false, "Best BowlingAvg", currentTeam().Logo);
 Loadperformer(["Economy", "Maidens"], true, "Best Maidens", currentTeam().Logo);
 Loadperformer(["BBM"], true, "Best Figures", currentTeam().Logo);
+
+Loadmatches(currentTeam().Result());

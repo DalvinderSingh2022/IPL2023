@@ -104,6 +104,16 @@ class NewTeam {
                 return "";
         }
     }
+    Result() {
+        var matches = [];
+        JSON.parse(localStorage.getItem("ipl2023matches")).forEach(match => {
+            if (match.matchHeader.matchTeamInfo[0].battingTeamShortName.toLowerCase() == this.Logo ||
+                match.matchHeader.matchTeamInfo[0].bowlingTeamShortName.toLowerCase() == this.Logo) {
+                matches.push(match)
+            }
+        });
+        return matches;
+    }
     Squad() {
         var Squad = [];
         for (const index in PlayerData) {

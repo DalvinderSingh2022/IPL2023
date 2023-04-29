@@ -534,6 +534,43 @@ nav.second {
     padding: 8px 24px;
 }
 
+.matches{
+    width: calc(100% - 2em);
+    overflow: auto;
+    justify-content: start;
+}
+
+.matches .match {
+    min-width: 320px;
+    color: var(--white);
+    border-radius: 5px;
+    position: relative;
+    transform: scale(0.95);
+    align-self: stretch;
+}
+
+.matches .match .name {
+    background: inherit;
+    position: absolute;
+    border-radius: 50px;
+    padding: 8px 24px;
+    top: -16px;
+}
+
+.matches .match .teams img {
+    height: 120px;
+}
+
+.matches .match .result {
+    background: inherit;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.matches .match:hover {
+    transform: scale(0.98);
+}
+
 .loading {
     top: 0;
     width: 100vw;

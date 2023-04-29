@@ -1,5 +1,5 @@
 import { PlayerData, TeamInfo, loadData } from "./data.js";
-import { Loadperformer, activeButton, sortTeams, LoadPlayers } from "./index.js";
+import { Loadperformer, activeButton, sortTeams, LoadPlayers, Loadmatches } from "./index.js";
 loadData();
 
 const Buttons = document.querySelectorAll(".winner button");
@@ -70,7 +70,7 @@ sortTeams();
 for (const index in TeamInfo) {
     captains.push(TeamInfo[index].Captain());
 };
-LoadPlayers(captains, document.querySelector(".captains"))
+LoadPlayers(captains, document.querySelector(".captains"));
 
 Loadperformer(["BattingAvg", "Runs"], true, "Most Runs");
 Loadperformer(["Runs", "StrikeRate"], true, "Best StrikeRate");
@@ -83,3 +83,5 @@ Loadperformer(["BallsBowled", "Economy"], false, "Best Economy");
 Loadperformer(["BallsBowled", "BowlingAvg"], false, "Best BowlingAvg");
 Loadperformer(["Economy", "Maidens"], true, "Best Maidens");
 Loadperformer(["BBM"], true, "Best Figures");
+
+Loadmatches(JSON.parse(localStorage.getItem("ipl2023matches")));

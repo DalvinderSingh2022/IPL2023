@@ -75,6 +75,13 @@ table td span.rank.rank-3 {
     background: linear-gradient(270deg, brown 50%, #bf6338);
 }
 
+.more {
+    background: var(--white);
+    border-radius: 50px;
+    padding: 12px 24px;
+    color: var(--dark);
+}
+
 @media only screen and (max-width: 550px) {
 
     td:nth-child(2),

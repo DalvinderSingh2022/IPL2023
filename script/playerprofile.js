@@ -54,16 +54,16 @@ function loadRanks() {
     }
     var html = "";
     var rank = {
-        Runs: getRank(SortList(["Runs"], true)),
-        StrikeRate: getRank(SortList(["StrikeRate"], true)),
-        Wicket: getRank(SortList(["Wicket"], true)),
-        BattingAvg: getRank(SortList(["BattingAvg"], true)),
-        Sixes: getRank(SortList(["Sixes"], true)),
-        HighestScore: getRank(SortList(["HighestScore"], true)),
-        BowlingAvg: getRank(SortList(["BowlingAvg"], false)),
-        Economy: getRank(SortList(["Economy"], false)),
-        Fours: getRank(SortList(["Fours"], true)),
-        Maidens: getRank(SortList(["Maidens"], true)),
+        Runs: getRank(SortList(["Runs"])),
+        StrikeRate: getRank(SortList(["StrikeRate"])),
+        Wicket: getRank(SortList(["Wicket"])),
+        BattingAvg: getRank(SortList(["BattingAvg"])),
+        Sixes: getRank(SortList(["Sixes"])),
+        HighestScore: getRank(SortList(["HighestScore"])),
+        BowlingAvg: getRank(SortList(["BowlingAvg"])),
+        Economy: getRank(SortList(["Economy"])),
+        Fours: getRank(SortList(["Fours"])),
+        Maidens: getRank(SortList(["Maidens"])),
     }
     for (const key in rank) {
         if (Object.hasOwnProperty.call(rank, key)) {
@@ -91,7 +91,7 @@ function loadStats(match) {
         }
     } else {
         Object.getOwnPropertyNames(Object.getPrototypeOf(currentPlayer()))
-            .filter(key => key != "constructor" && key != "updateBatStats" && key != "updateBowlStats" && key != "matchIndex" && key != "getMatches" && key != "HsRuns" && key != "HsNotout")
+            .filter(key => key != "constructor" && key != "updateBatStats" && key != "updateBowlStats" && key != "matchIndex" && key != "getMatches" && key != "HsRuns" && key != "HsNotout" && key != "Team")
             .filter(key => typeof (currentPlayer()[key]) == 'function' && (typeof (currentPlayer()[key]()) == "number" || typeof (currentPlayer()[key]()) == "string"))
             .map(key => {
                 html += `<div class="group flex j-between nowrap">

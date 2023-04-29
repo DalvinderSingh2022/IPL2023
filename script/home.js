@@ -8,7 +8,7 @@ var captains = [];
 var total = {
     Runs: 0,
     Sixes: 0,
-    Fours : 0,
+    Fours: 0,
     Fifties: 0,
     Hundreds: 0,
     Wicket: 0,
@@ -72,16 +72,17 @@ for (const index in TeamInfo) {
 };
 LoadPlayers(captains, document.querySelector(".captains"));
 
-Loadperformer(["BattingAvg", "Runs"], true, "Most Runs");
-Loadperformer(["Runs", "StrikeRate"], true, "Best StrikeRate");
-Loadperformer(["Runs", "BattingAvg"], true, "Best Average");
-Loadperformer(["StrikeRate", "Sixes"], true, "Most Sixes");
-Loadperformer(["BattingAvg", "Fours"], true, "Fours");
-Loadperformer(["BattingAvg", "HighestScore"], true, "HighestScore");
-Loadperformer(["Economy", "Wicket"], true, "Most Wickets");
-Loadperformer(["BallsBowled", "Economy"], false, "Best Economy");
-Loadperformer(["BallsBowled", "BowlingAvg"], false, "Best BowlingAvg");
-Loadperformer(["Economy", "Maidens"], true, "Best Maidens");
-Loadperformer(["BBM"], true, "Best Figures");
+Loadperformer(["BattingAvg", "Runs"], "Most Runs");
+Loadperformer(["Runs", "StrikeRate"], "Best StrikeRate");
+Loadperformer(["Runs", "BattingAvg"], "Best Average");
+Loadperformer(["StrikeRate", "Sixes"], "Most Sixes");
+Loadperformer(["BattingAvg", "Fours"], "Fours");
+Loadperformer(["BattingAvg", "HighestScore"], "HighestScore");
+Loadperformer(["Economy", "Wicket"], "Most Wickets");
+Loadperformer(["BallsBowled", "Economy"], "Best Economy");
+Loadperformer(["BallsBowled", "BowlingAvg"], "Best Bowling Average");
+Loadperformer(["Economy", "BowlingStrike"], "Best Bowling StrikeRate");
+Loadperformer(["Economy", "Maidens"], "Best Maidens");
+Loadperformer(["BBM"], "Best Figures");
 
 Loadmatches(JSON.parse(localStorage.getItem("ipl2023matches")));

@@ -69,16 +69,17 @@ container.innerHTML = html;
 
 LoadPlayers(currentTeam().Squad(), document.querySelector(".squad"));
 
-Loadperformer(["BattingAvg", "Runs"], true, "Most Runs", currentTeam().Logo);
-Loadperformer(["Runs", "StrikeRate"], true, "Best StrikeRate", currentTeam().Logo);
-Loadperformer(["Runs", "BattingAvg"], true, "Best Average", currentTeam().Logo);
-Loadperformer(["StrikeRate", "Sixes"], true, "Most Sixes", currentTeam().Logo);
-Loadperformer(["BattingAvg", "Fours"], true, "Fours", currentTeam().Logo);
-Loadperformer(["BattingAvg", "HighestScore"], true, "HighestScore", currentTeam().Logo);
-Loadperformer(["Economy", "Wicket"], true, "Most Wickets", currentTeam().Logo);
-Loadperformer(["BallsBowled", "Economy"], false, "Best Economy", currentTeam().Logo);
-Loadperformer(["BallsBowled", "BowlingAvg"], false, "Best BowlingAvg", currentTeam().Logo);
-Loadperformer(["Economy", "Maidens"], true, "Best Maidens", currentTeam().Logo);
-Loadperformer(["BBM"], true, "Best Figures", currentTeam().Logo);
+Loadperformer(["BattingAvg", "Runs"], "Most Runs", currentTeam().Logo);
+Loadperformer(["Runs", "StrikeRate"], "Best StrikeRate", currentTeam().Logo);
+Loadperformer(["Runs", "BattingAvg"], "Best Average", currentTeam().Logo);
+Loadperformer(["StrikeRate", "Sixes"], "Most Sixes", currentTeam().Logo);
+Loadperformer(["BattingAvg", "Fours"], "Fours", currentTeam().Logo);
+Loadperformer(["BattingAvg", "HighestScore"], "HighestScore", currentTeam().Logo);
+Loadperformer(["Economy", "Wicket"], "Most Wickets", currentTeam().Logo);
+Loadperformer(["BallsBowled", "Economy"], "Best Economy", currentTeam().Logo);
+Loadperformer(["BallsBowled", "BowlingAvg"], "Best BowlingAvg", currentTeam().Logo);
+Loadperformer(["Economy", "BowlingStrike"], "Best Bowling StrikeRate", currentTeam().Logo);
+Loadperformer(["Economy", "Maidens"], "Best Maidens", currentTeam().Logo);
+Loadperformer(["BBM"], "Best Figures", currentTeam().Logo);
 
 Loadmatches(currentTeam().Result());

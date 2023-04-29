@@ -16,7 +16,7 @@ export function sortTeams() {
     });
 }
 
-export function SortList(keys, order, Team = "all") {
+export function SortList(keys, Team = "all") {
     sortPlayers();
     for (const key in keys) {
         if (keys.find(a => a == "HighestScore")) {
@@ -27,7 +27,11 @@ export function SortList(keys, order, Team = "all") {
                 .sort((a, b) => { return b.BBM().split("/")[0] - a.BBM().split("/")[0] })
                 .filter(a => a.BBM().split("/")[0] != 0);
         } else {
-            var list = PlayerData.sort((a, b) => { return order ? (b[keys[key]]() - a[keys[key]]()) : (a[keys[key]]() - b[keys[key]]()) });
+            const descOrders = ["Economy", "BowlingAvg", "BowlingStrike"];
+            var list = PlayerData.sort((a, b) => {
+                const order = descOrders.includes(keys[key]);
+                return order ? (a[keys[key]]() - b[keys[key]]()) : (b[keys[key]]() - a[keys[key]]())
+            });
         }
     }
     return list.filter((a) => { return a[keys[keys.length - 1]]() })
@@ -96,8 +100,8 @@ export function LoadPlayers(list, Parent, Length = list.length) {
     playerProfileEvent(playerBtns);
 };
 
-export function Loadperformer(keys, order, type, team = "all") {
-    const player = SortList(keys, order, team)[0];
+export function Loadperformer(keys, type, team = "all") {
+    const player = SortList(keys, team)[0];
     if (!player) return
     const performer = document.createElement("div");
     performer.innerHTML = `

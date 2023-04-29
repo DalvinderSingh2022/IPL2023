@@ -1158,7 +1158,7 @@ var Players = [
         Role: " Bowler india",
     },
     {
-        FullName: "Gurnoor Singh Brar",
+        FullName: "Gurnoor Brar",
         TeamLogo: "pbks",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1231.png",
         Role: " Bowler india",
@@ -1816,13 +1816,13 @@ class NewPlayer {
         return Fours;
     };
     StrikeRate() {
-        if (this.Runs()) {
+        if (this.Runs() && this.Ballsfaced() >= 20) {
             return ((this.Runs() / this.Ballsfaced()) * 100).toFixed(2);
         }
         return 0;
     };
     BattingAvg() {
-        if (this.Runs()) {
+        if (this.Runs() && this.Ballsfaced() >= 20) {
             if (!(this.getMatches() - this.NotOuts())) {
                 return (this.Runs()).toFixed(2);
             }
@@ -1876,19 +1876,19 @@ class NewPlayer {
         return RunsGiven;
     };
     Economy() {
-        if (this.BallsBowled()) {
+        if (this.BallsBowled() && this.BallsBowled() >= 24) {
             return ((this.RunsGiven() / this.BallsBowled()) * 6).toFixed(2);
         }
         return 0;
     };
     BowlingAvg() {
-        if (this.Wicket()) {
+        if (this.Wicket() && this.BallsBowled() >= 24) {
             return (this.RunsGiven() / this.Wicket()).toFixed(2);
         }
         return 0;
     };
     BowlingStrike() {
-        if (this.Wicket()) {
+        if (this.Wicket() && this.BallsBowled() >= 24) {
             return (this.BallsBowled() / this.Wicket()).toFixed(2);
         }
         return 0;
@@ -1970,6 +1970,21 @@ class NewPlayer {
 export var PlayerData = [];
 Players.forEach(player => PlayerData.push(new NewPlayer(player)));
 
+export function loadData() {
+    if (localStorage.getItem("ipl2023pt")) {
+        var lastMatch = JSON.parse(localStorage.getItem("ipl2023matches"))[JSON.parse(localStorage.getItem("ipl2023matches")).length - 1]
+        var nextMatchdate = new Date(Number(lastMatch.matchHeader.matchStartTimestamp));
+        var todaydate = new Date();
+    }
+    if (!localStorage.getItem("ipl2023pt") || (nextMatchdate.getDate() < todaydate.getDate() - 1 && nextMatchdate.getMonth() >= todaydate.getMonth())) {
+        loadDataToLS();
+    } else {
+        loadTeamsStats();
+        loadPlayersStats();
+    }
+}
+// localStorage.setItem("ipl2023matches", JSON.stringify(JSON.parse(localStorage.getItem("ipl2023matches")).splice(0, 38)))
+
 const options = {
     method: 'GET',
     headers: {
@@ -1979,6 +1994,7 @@ const options = {
 };
 
 function loadDataToLS() {
+    var matches = [];
     var matchesId = [];
     fetch('https://cricbuzz-cricket.p.rapidapi.com/stats/v1/series/5945/points-table', options)
         .then(response => response.json())
@@ -1986,10 +2002,15 @@ function loadDataToLS() {
             response.pointsTable[0].pointsTableInfo.forEach(team => {
                 team.teamMatches.forEach(match => {
                     if (match.result) {
-                        matchesId.push(match.matchId)
+                        matches.push(match)
                     }
                 });
             });
+            matches = matches.sort((a, b) => { return a.startdt - b.startdt })
+                .sort((a, b) => { return Number(a.matchName.split(" ")[0].slice(0, -2)) - Number(b.matchName.split(" ")[0].slice(0, -2)) });
+            matches.map(match => matchesId.push(match.matchId));
+            matchesId = matchesId.concat(matchesIdLS());
+            matchesId = matchesId.filter((a, index) => matchesId.indexOf(a) === index);
             localStorage.setItem("ipl2023pt", JSON.stringify(response));
             setTimeout(loadMatchesScorecard, 3000, matchesId.filter(a => !matchesIdLS().includes(a)), 0);
         }).catch(err => console.error(err));
@@ -2081,45 +2102,4 @@ function loadTeamsStats() {
     JSON.parse(localStorage.getItem("ipl2023pt")).pointsTable[0].pointsTableInfo.forEach(team => {
         TeamInfo.push(new NewTeam(team));
     });
-}
-
-function nextMatch() {
-    const matchesLS = [];
-    var nextmatch;
-    var lastMatch;
-    if (localStorage.getItem("ipl2023pt")) {
-        JSON.parse(localStorage.getItem("ipl2023pt")).pointsTable[0].pointsTableInfo.forEach(team => {
-            team.teamMatches.forEach(match => {
-                if (match.result) {
-                    matchesLS.push(match)
-                }
-            });
-        });
-        matchesLS.forEach(match => { match.matchNumber = (match.matchName.replaceAll(" ", "").split("").map(a => Number(a)).filter(a => { return a || a === 0 })).join(""); })
-        matchesLS.sort((a, b) => { return a.matchNumber - b.matchNumber });
-        lastMatch = matchesLS[matchesLS.length - 1];
-
-        JSON.parse(localStorage.getItem("ipl2023pt")).pointsTable[0].pointsTableInfo.forEach(team => {
-            team.teamMatches.forEach(match => { match.matchNumber = (match.matchName.replaceAll(" ", "").split("").map(a => Number(a)).filter(a => { return a || a === 0 })).join(""); })
-            team.teamMatches.sort((a, b) => { return a.matchNumber - b.matchNumber })
-                .map(a => a.matchNumber == (Number(lastMatch.matchNumber) + 1) ? nextmatch = a : "");
-        });
-    }
-    return nextmatch;
-}
-
-export function loadData() {
-    var nextMatchdate = 0;
-    var todaydate = 0;
-    if (localStorage.getItem("ipl2023pt")) {
-        nextMatchdate = new Date(Number(nextMatch().startdt)).getDate();
-        todaydate = new Date().getDate();
-    }
-
-    if (!localStorage.getItem("ipl2023pt") || nextMatchdate < todaydate) {
-        loadDataToLS();
-    } else {
-        loadTeamsStats();
-        loadPlayersStats();
-    }
 }

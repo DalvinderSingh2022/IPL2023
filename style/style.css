@@ -18,8 +18,8 @@
     border: 2px solid var(--dark);
 }
 
-.team:not(.performers .team)::after,
-.team:not(.performers .team)::before {
+.team::after,
+.team::before {
     content: "";
     position: absolute;
     filter: blur(5px);
@@ -483,6 +483,7 @@ nav.second {
     width: calc(100% - 2em);
     overflow: auto;
     justify-content: start;
+    gap: 1.5em;
 }
 
 .performers .wrapper {
@@ -517,6 +518,7 @@ nav.second {
     padding: 8px 0;
     z-index: 9;
     color: var(--white);
+    box-shadow: 0 0 8px 4px var(--dark);
 }
 
 .performers .wrapper .data {
@@ -525,6 +527,7 @@ nav.second {
     margin: -1em;
     border-radius: 0 0 12px 12px;
     z-index: 9;
+    box-shadow: 0 0 6px 3px var(--white);
 }
 
 .performers .wrapper a {
@@ -534,7 +537,7 @@ nav.second {
     padding: 8px 24px;
 }
 
-.matches{
+.matches {
     width: calc(100% - 2em);
     overflow: auto;
     justify-content: start;

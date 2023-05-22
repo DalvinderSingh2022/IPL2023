@@ -17,7 +17,7 @@ var bio = {
     Team: currentPlayer().Team()
 };
 var html = `
-<div class="box team-logo team ${currentPlayer().TeamLogo} flex">
+<div class="box team-logo team ${currentPlayer().TeamLogo} flex inner">
     <img src=${currentPlayer().Image} class="flex inner player-img">
     <span class="player-name text-center">${currentPlayer().FullName}</span>
     <div class="flex col logos">
@@ -28,7 +28,8 @@ if (currentPlayer().IsKeeper()) html += `<span class="flex inner"><i class="fa-s
 html += `
     </div>
 </div>
-<div class="info flex col j-start nowrap">`;
+<div class="info flex col j-start nowrap">
+    <div class="data flex inner">`;
 for (const key in bio) {
     if (Object.hasOwnProperty.call(bio, key) && bio[key]) {
         html += `
@@ -37,7 +38,7 @@ for (const key in bio) {
         </div>`;
     }
 }
-html += `</div>`;
+html += `</div></div>`;
 container.innerHTML = html;
 container.querySelector(".player-img").onerror = () => {
     container.querySelector(".player-img").src = defaultImage;

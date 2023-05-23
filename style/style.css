@@ -61,8 +61,8 @@
 
 .team.rr,
 .team.rr::after {
-    background: linear-gradient(180deg, #9f0e9d, #17157a);
-    border-color: #17157a;
+    background: linear-gradient(180deg, #bc02b9, #630294);
+    border-color: #5e0889;
 }
 
 .team.rcb,
@@ -73,8 +73,8 @@
 
 .team.srh,
 .team.srh::after {
-    background: linear-gradient(180deg, #F26522, #ED1A37);
-    border-color: #ED1A37;
+    background: linear-gradient(180deg, #F26522, #b32300);
+    border-color: #b32300;
 }
 
 .team.lsg,
@@ -102,18 +102,18 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--grey);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: var(--dark);
     border-radius: 10px;
+    border: 2px solid var(--light);
 }
 
 body {
     min-height: 100vh;
-    background: var(--grad);
+    background: linear-gradient(90deg, var(--light), var(--dark), var(--light));
     overflow: hidden;
 }
 
@@ -588,7 +588,7 @@ nav.second {
 @media only screen and (max-width: 640px) {
     .info {
         padding: 1em 2em;
-        width: calc(100vw - 8em);
+        width: calc(100vw - 6em);
         min-width: unset;
     }
 }

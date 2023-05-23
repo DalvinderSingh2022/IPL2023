@@ -165,7 +165,7 @@ export function secondNav() {
     }
 }
 
-export const defaultImage = "https://www.iplt20.com/assets/images/default-headshot.png";
+export const defaultImage = "https://scores.iplt20.com/ipl/images/default-player-statsImage.png";
 
 (() => {
     const menuBtn = document.querySelector(".menu");

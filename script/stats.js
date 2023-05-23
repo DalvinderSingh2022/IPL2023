@@ -74,6 +74,7 @@ TeamButtons.forEach(button => {
         activeButton(button, TeamButtons);
         changeHeading(teamBtn, button.getAttribute("data-team").toUpperCase());
         SelectedTeam = button.getAttribute("data-team");
+        playerLength = 0;
         lastButton.click();
     }
 });

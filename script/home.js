@@ -84,4 +84,4 @@ Loadperformer(["Economy", "BowlingStrike"], "Best Bowling StrikeRate");
 Loadperformer(["Economy", "Maidens"], "Best Maidens");
 Loadperformer(["BBM"], "Best Figures");
 
-Loadmatches(JSON.parse(localStorage.getItem("ipl2023matches")));
+Loadmatches(JSON.parse(localStorage.getItem("scorecards")));

@@ -1,6 +1,6 @@
 export var TeamInfo = [];
 class NewTeam {
-    constructor({ teamName, matchesPlayed, matchesWon, matchesLost, points, nrr, teamFullName, form, teamMatches }) {
+    constructor({ teamName, matchesPlayed, matchesWon, matchesLost, points, nrr, teamFullName, form, teamMatches, teamQualifyStatus }) {
         this.Logo = teamName.toLowerCase();
         this.Played = matchesPlayed || 0;
         this.Won = matchesWon || 0;
@@ -11,6 +11,7 @@ class NewTeam {
         this.Team = teamFullName;
         this.Form = form;
         this.Matches = teamMatches;
+        this.Qualified = teamQualifyStatus == 'Q';
     }
     Image() {
         switch (this.Logo) {
@@ -106,7 +107,7 @@ class NewTeam {
     }
     Result() {
         var matches = [];
-        JSON.parse(localStorage.getItem("ipl2023matches")).forEach(match => {
+        JSON.parse(localStorage.getItem("scorecards")).forEach(match => {
             if (match.matchHeader.matchTeamInfo[0].battingTeamShortName.toLowerCase() == this.Logo ||
                 match.matchHeader.matchTeamInfo[0].bowlingTeamShortName.toLowerCase() == this.Logo) {
                 matches.push(match)
@@ -374,6 +375,12 @@ var Players = [
         Role: " Batter india",
     },
     {
+        FullName: "Priyam Garg",
+        TeamLogo: "dc",
+        Image: "",
+        Role: " Batter india",
+    },
+    {
         FullName: "Rovman Powell",
         TeamLogo: "dc",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/329.png",
@@ -404,7 +411,7 @@ var Players = [
         Role: " Allrounder",
     },
     {
-        FullName: "Pravin Dubey",
+        FullName: "Praveen Dubey",
         TeamLogo: "dc",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/548.png",
         Role: " Bowler india",
@@ -528,6 +535,12 @@ var Players = [
         TeamLogo: "gt",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/128.png",
         Role: " Batter",
+    },
+    {
+        FullName: "Dasun Shanaka",
+        TeamLogo: "gt",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/375.png",
+        Role: " Allrounder",
     },
     {
         FullName: "Shubman Gill",
@@ -687,6 +700,12 @@ var Players = [
         Role: " Batter",
     },
     {
+        FullName: "Johnson Charles",
+        TeamLogo: "kkr",
+        Image: "",
+        Role: " Batter",
+    },
+    {
         FullName: "David Wiese",
         TeamLogo: "kkr",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/674.png",
@@ -819,6 +838,18 @@ var Players = [
         Role: " Batter india",
     },
     {
+        FullName: "Karun Nair",
+        TeamLogo: "lsg",
+        Image: "",
+        Role: " Batter india",
+    },
+    {
+        FullName: "Suryansh Shedge",
+        TeamLogo: "lsg",
+        Image: "",
+        Role: " Batter india",
+    },
+    {
         FullName: "Quinton de Kock",
         TeamLogo: "lsg",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/170.png",
@@ -872,6 +903,12 @@ var Players = [
         FullName: "Avesh Khan",
         TeamLogo: "lsg",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/109.png",
+        Role: " Bowler india",
+    },
+    {
+        FullName: "Arpit Guleria",
+        TeamLogo: "lsg",
+        Image: "",
         Role: " Bowler india",
     },
     {
@@ -1001,6 +1038,12 @@ var Players = [
         Role: " Bowler ",
     },
     {
+        FullName: "Chris Jordan",
+        TeamLogo: "mi",
+        Image: "",
+        Role: " Bowler ",
+    },
+    {
         FullName: "N. Tilak Varma",
         TeamLogo: "mi",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/993.png",
@@ -1100,6 +1143,12 @@ var Players = [
         FullName: "Raghav Goyal",
         TeamLogo: "mi",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1933.png",
+        Role: " Bowler india",
+    },
+    {
+        FullName: "Sandeep Warrier",
+        TeamLogo: "mi",
+        Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/228.png",
         Role: " Bowler india",
     },
     {
@@ -1368,7 +1417,7 @@ var Players = [
         Role: "Bowler india",
     },
     {
-        FullName: "Obed Macoy",
+        FullName: "Obed Mccoy",
         TeamLogo: "rr",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/645.png",
         Role: "Bowler",
@@ -1430,6 +1479,12 @@ var Players = [
     },
     {
         FullName: "Rajat Patidar",
+        TeamLogo: "rcb",
+        Image: "",
+        Role: "Batter india",
+    },
+    {
+        FullName: "Kedar Jadhav",
         TeamLogo: "rcb",
         Image: "",
         Role: "Batter india",
@@ -1648,10 +1703,10 @@ var Players = [
         Role: "Batter india",
     },
     {
-        FullName: "Nitish Kumar Reddy",
+        FullName: "Nitish Reddy",
         TeamLogo: "srh",
         Image: "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/1944.png",
-        Role: "Batter india",
+        Role: "Wicketkeeper Batter india",
     },
     {
         FullName: "Abhishek Sharma",
@@ -1822,10 +1877,7 @@ class NewPlayer {
         return 0;
     };
     BattingAvg() {
-        if (this.Runs() && this.Ballsfaced() >= 20) {
-            if (!(this.getMatches() - this.NotOuts())) {
-                return (this.Runs()).toFixed(2);
-            }
+        if (this.Runs() && this.Ballsfaced() >= 20 && (this.getMatches() - this.NotOuts()) > 0) {
             return (this.Runs() / (this.getMatches() - this.NotOuts())).toFixed(2);
         }
         return 0;
@@ -1936,10 +1988,10 @@ class NewPlayer {
             }
         }
     }
-    updateBatStats({ balls, fours, outDesc, runs, sixes, strikeRate }, id) {
-        const index = this.matchIndex(id) != undefined ? this.matchIndex(id) : this.Matches.length;
-        this.Matches[index] = this.matchIndex(id) != undefined ? this.Matches[index] : {};
-        this.Matches[index].Id = id;
+    updateBatStats({ balls, fours, outDesc, runs, sixes, strikeRate }, number) {
+        const index = this.matchIndex(number) != undefined ? this.matchIndex(number) : this.Matches.length;
+        this.Matches[index] = this.matchIndex(number) != undefined ? this.Matches[index] : {};
+        this.Matches[index].number = number;
 
         this.Matches[index].Runs = runs;
         this.Matches[index].Ballsfaced = balls;
@@ -1948,10 +2000,10 @@ class NewPlayer {
         this.Matches[index].StrikeRate = strikeRate;
         this.Matches[index].Fours = fours;
     }
-    updateBowlStats({ overs, economy, maidens, runs, wickets }, id) {
-        const index = this.matchIndex(id) != undefined ? this.matchIndex(id) : this.Matches.length;
-        this.Matches[index] = this.matchIndex(id) != undefined ? this.Matches[index] : {};
-        this.Matches[index].Id = id;
+    updateBowlStats({ overs, economy, maidens, runs, wickets }, number) {
+        const index = this.matchIndex(number) != undefined ? this.matchIndex(number) : this.Matches.length;
+        this.Matches[index] = this.matchIndex(number) != undefined ? this.Matches[index] : {};
+        this.Matches[index].number = number;
 
         this.Matches[index].BallsBowled = ((parseInt(overs) * 6) + parseInt((overs * 10) % 10));
         this.Matches[index].Economy = economy;
@@ -1959,9 +2011,9 @@ class NewPlayer {
         this.Matches[index].RunsGiven = runs;
         this.Matches[index].Wicket = wickets;
     }
-    matchIndex(id) {
+    matchIndex(number) {
         for (let index = 0; index < this.Matches.length; index++) {
-            if (this.Matches[index].Id == id) {
+            if (this.Matches[index].number == number) {
                 return index;
             }
         }
@@ -1969,20 +2021,6 @@ class NewPlayer {
 }
 export var PlayerData = [];
 Players.forEach(player => PlayerData.push(new NewPlayer(player)));
-
-(function () {
-    if (localStorage.getItem("ipl2023pt")) {
-        var lastMatch = JSON.parse(localStorage.getItem("ipl2023matches"))[JSON.parse(localStorage.getItem("ipl2023matches")).length - 1]
-        var nextMatchdate = new Date(Number(lastMatch.matchHeader.matchStartTimestamp));
-        var todaydate = new Date();
-    }
-    if (!localStorage.getItem("ipl2023pt") || (nextMatchdate.getDate() < todaydate.getDate() - 1 && nextMatchdate.getMonth() >= todaydate.getMonth())) {
-        loadDataToLS();
-    } else {
-        loadTeamsStats();
-        loadPlayersStats();
-    }
-})();
 
 const options = {
     method: 'GET',
@@ -1992,74 +2030,136 @@ const options = {
     }
 };
 
-function loadDataToLS() {
-    var matches = [];
-    var matchesId = [];
-    fetch('https://cricbuzz-cricket.p.rapidapi.com/stats/v1/series/5945/points-table', options)
-        .then(response => response.json())
-        .then(response => {
-            response.pointsTable[0].pointsTableInfo.forEach(team => {
-                team.teamMatches.forEach(match => {
-                    if (match.result) {
-                        matches.push(match)
+const apifetch = {
+    Matches: async function () {
+        try {
+            const response = await fetch('https://cricbuzz-cricket.p.rapidapi.com/series/v1/5945', options);
+            if (response.ok) {
+                const result = await response.json();
+                const matches = [];
+                const matchesId = [];
+                result.matchDetails.forEach(day => {
+                    if ((day.matchDetailsMap)) {
+                        (day.matchDetailsMap.match).forEach(match => {
+                            matches.push(match);
+                            if (match.matchInfo.state == "Complete") {
+                                matchesId.push(match.matchInfo.matchId);
+                            }
+                        })
                     }
                 });
-            });
-            matches = matches.sort((a, b) => { return a.startdt - b.startdt })
-                .sort((a, b) => { return Number(a.matchName.split(" ")[0].slice(0, -2)) - Number(b.matchName.split(" ")[0].slice(0, -2)) });
-            matches.map(match => matchesId.push(match.matchId));
-            matchesId = matchesId.concat(matchesIdLS());
-            matchesId = matchesId.filter((a, index) => matchesId.indexOf(a) === index);
-            localStorage.setItem("ipl2023pt", JSON.stringify(response));
-            setTimeout(loadMatchesScorecard, 3000, matchesId.filter(a => !matchesIdLS().includes(a)), 0);
-        }).catch(err => console.error(err));
+                localStorage.setItem("matches", JSON.stringify(matches));
+                setTimeout(apifetch.Scorecards, 200, matchesId.filter(a => !MatchesIdLS().includes(a)));
+            } else if (response.status == 429) {
+                load.loadingmessage(`Error Api Limit over, first ${JSON.parse(localStorage.getItem("scorcards")).length} matches Loaded`, "fa-solid fa-circle-exclamation");
+                setTimeout(() => { load.PlayersData(); load.TeamsData() }, 2500);
+            } else {
+                load.loadingmessage(`Error ${response.status || ""} occur, Reload page`, "fa-solid fa-circle-exclamation fa-beat-fade");
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    },
+    Pointstable: async function () {
+        try {
+            const response = await fetch('https://cricbuzz-cricket.p.rapidapi.com/stats/v1/series/5945/points-table', options);
+            if (response.ok) {
+                const result = await response.json();
+                const pointstable = result.pointsTable[0].pointsTableInfo;
+                localStorage.setItem("pointstable", JSON.stringify(pointstable));
+                window.location.reload();
+            } else if (response.status == 429) {
+                load.loadingmessage(`Error Api Limit over, first ${JSON.parse(localStorage.getItem("scorcards")).length} matches Loaded`, "fa-solid fa-circle-exclamation");
+                setTimeout(() => { load.PlayersData(); load.TeamsData() }, 2500);
+            } else {
+                load.loadingmessage(`Error ${response.status || ""} occur, Reload page`, "fa-solid fa-circle-exclamation fa-beat-fade");
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    },
+    Scorecards: async function (ids) {
+        if (ids.length) {
+            try {
+                const response = await fetch(`https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/${ids[0]}/scard`, options);
+                if (response.ok) {
+                    const result = await response.json();
+                    const matches = localStorage.getItem("scorecards") ? JSON.parse(localStorage.getItem("scorecards")) : [];
+                    matches.push(result);
+                    localStorage.setItem("scorecards", JSON.stringify(matches));
+                    load.loadingmessage(`Loading ${result.matchHeader.matchDescription}`);
+                    setTimeout(apifetch.Scorecards, 200, ids.filter(a => !MatchesIdLS().includes(a)));
+                } else if (response.status == 429) {
+                    load.loadingmessage(`Error Api Limit over, first ${JSON.parse(localStorage.getItem("scorcards")).length} matches Loaded`, "fa-solid fa-circle-exclamation");
+                    setTimeout(() => { load.PlayersData(); load.TeamsData() }, 2500);
+                } else {
+                    load.loadingmessage(`Error ${response.status || ""} occur, Reload page`, "fa-solid fa-circle-exclamation fa-beat-fade");
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        } else {
+            window.location.reload();
+        }
+    },
+    start: async function () {
+        const scorecard = JSON.parse(localStorage.getItem("scorecards")) || [];
+        const match = JSON.parse(localStorage.getItem("matches")) || [];
+        if (!localStorage.getItem("pointstable")) {
+            await apifetch.Pointstable();
+        }
+        if (!localStorage.getItem("matches") || (Number(match[scorecard.length].matchInfo.endDate) + 2 * 60 * 60 * 1000) < new Date().getTime()) {
+            await apifetch.Matches();
+        } else {
+            load.PlayersData();
+            load.TeamsData();
+        }
+    }
+
 }
 
-function matchesIdLS() {
+const load = {
+    TeamsData: function () {
+        if (localStorage.getItem("scorecards")) {
+            JSON.parse(localStorage.getItem("scorecards"))
+                .forEach(match => {
+                    const matchNum = match.matchHeader.matchDescription.split(" ")[0].slice(0, -2);
+                    match.scoreCard.forEach(innings => {
+                        findPlayer(innings, "batName", matchNum);
+                        findPlayer(innings, "bowlName", matchNum);
+                    });
+                });
+            window.addEventListener("load", () => {
+                document.querySelector(".loading").classList.add("hide");
+                document.querySelector("body").style.overflow = "auto";
+            })
+        }
+    },
+    PlayersData: function () {
+        JSON.parse(localStorage.getItem("pointstable")).forEach(team => {
+            TeamInfo.push(new NewTeam(team));
+        });
+    },
+    loadingmessage: function (message, classlist) {
+        const loadingEl = document.querySelector(".loading");
+        loadingEl.classList.add("col");
+        loadingEl.innerHTML = `
+        <i class="${classlist || 'fa-solid fa-spinner fa-spin'}"></i>
+        <span class="flex inner" style="font-size:32px">${message}</span>`;
+    }
+}
+
+function MatchesIdLS() {
     var matchesIdLS = [];
-    if (localStorage.getItem("ipl2023matches")) {
-        JSON.parse(localStorage.getItem("ipl2023matches")).forEach(match => {
+    if (localStorage.getItem("scorecards")) {
+        JSON.parse(localStorage.getItem("scorecards")).forEach(match => {
             matchesIdLS.push(match.matchHeader.matchId);
         });
     }
     return matchesIdLS;
 }
 
-function loadMatchesScorecard(ids, index) {
-    if (index < ids.length) {
-        fetch(`https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/${ids[index]}/scard`, options)
-            .then(response => response.json())
-            .then(response => {
-                const matches = localStorage.getItem("ipl2023matches") ? JSON.parse(localStorage.getItem("ipl2023matches")) : [];
-                matches.push(response);
-                localStorage.setItem("ipl2023matches", JSON.stringify(matches));
-            }).catch(err => console.error(err));
-        setTimeout(loadMatchesScorecard, 3000, ids.filter(a => !matchesIdLS().includes(a)), ++index);
-    }
-    if (index == ids.length - 1 || !ids.length) {
-        loadTeamsStats();
-        loadPlayersStats();
-    }
-}
-
-function loadPlayersStats() {
-    if (localStorage.getItem("ipl2023matches")) {
-        JSON.parse(localStorage.getItem("ipl2023matches"))
-            .sort((a, b) => { return a.matchHeader.matchStartTimestamp - b.matchHeader.matchStartTimestamp })
-            .forEach(match => {
-                match.scoreCard.forEach(innings => {
-                    findPlayer(innings, "batName");
-                    findPlayer(innings, "bowlName");
-                });
-            });
-        window.addEventListener("load", () => {
-            document.querySelector(".loading").classList.add("hide");
-            document.querySelector("body").style.overflow = "auto";
-        })
-    }
-}
-
-function findPlayer(innings, nameType) {
+function findPlayer(innings, nameType, matchNum) {
     const players = (nameType == "batName") ? innings.batTeamDetails.batsmenData : innings.bowlTeamDetails.bowlersData;
     const team = (nameType == "batName") ? innings.batTeamDetails.batTeamShortName : innings.bowlTeamDetails.bowlTeamShortName;
     const playerNameObj = {}
@@ -2068,10 +2168,10 @@ function findPlayer(innings, nameType) {
         const apiPlayerName = players[name][`${nameType}`].toLowerCase().replaceAll(" ", "");
         playerNameObj[name] = players[name];
 
-        if (playerByName(apiPlayerName, team)) {
+        if (PlayerName(apiPlayerName, team)) {
             (nameType == "batName") ?
-                playerByName(apiPlayerName, team).updateBatStats(players[name], innings.matchId) :
-                playerByName(apiPlayerName, team).updateBowlStats(players[name], innings.matchId);
+                PlayerName(apiPlayerName, team).updateBatStats(players[name], matchNum) :
+                PlayerName(apiPlayerName, team).updateBowlStats(players[name], matchNum);
             playerNameObj[name] = undefined;
         }
     }
@@ -2083,7 +2183,7 @@ function findPlayer(innings, nameType) {
     }
 }
 
-function playerByName(apiPlayer, team) {
+function PlayerName(apiPlayer, team) {
     for (const index in PlayerData) {
         const PlayerName = PlayerData[index].FullName.toLowerCase().replaceAll(" ", "");
         const PlayerSecondName = PlayerData[index].SecondName ? PlayerData[index].SecondName.toLowerCase().replaceAll(" ", "") : "";
@@ -2097,8 +2197,4 @@ function playerByName(apiPlayer, team) {
     }
 }
 
-function loadTeamsStats() {
-    JSON.parse(localStorage.getItem("ipl2023pt")).pointsTable[0].pointsTableInfo.forEach(team => {
-        TeamInfo.push(new NewTeam(team));
-    });
-}
+await apifetch.start();

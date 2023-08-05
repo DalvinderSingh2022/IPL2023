@@ -92,7 +92,7 @@ class NewTeam {
             case "rr":
                 return "2008";
             case "csk":
-                return "2010 2011 2018 2021";
+                return "2010 2011 2018 2021 2023";
             case "kkr":
                 return "2012 2014";
             case "mi":
@@ -108,8 +108,8 @@ class NewTeam {
     Result() {
         var matches = [];
         JSON.parse(localStorage.getItem("scorecards")).forEach(match => {
-            if (match.matchHeader.matchTeamInfo[0].battingTeamShortName.toLowerCase() == this.Logo ||
-                match.matchHeader.matchTeamInfo[0].bowlingTeamShortName.toLowerCase() == this.Logo) {
+            if (match.matchHeader.team1.shortName.toLowerCase() == this.Logo ||
+                match.matchHeader.team2.shortName.toLowerCase() == this.Logo) {
                 matches.push(match)
             }
         });
@@ -1991,7 +1991,7 @@ class NewPlayer {
     updateBatStats({ balls, fours, outDesc, runs, sixes, strikeRate }, number) {
         const index = this.matchIndex(number) != undefined ? this.matchIndex(number) : this.Matches.length;
         this.Matches[index] = this.matchIndex(number) != undefined ? this.Matches[index] : {};
-        this.Matches[index].number = number;
+        this.Matches[index].Match = number;
 
         this.Matches[index].Runs = runs;
         this.Matches[index].Ballsfaced = balls;
@@ -2003,7 +2003,7 @@ class NewPlayer {
     updateBowlStats({ overs, economy, maidens, runs, wickets }, number) {
         const index = this.matchIndex(number) != undefined ? this.matchIndex(number) : this.Matches.length;
         this.Matches[index] = this.matchIndex(number) != undefined ? this.Matches[index] : {};
-        this.Matches[index].number = number;
+        this.Matches[index].Match = number;
 
         this.Matches[index].BallsBowled = ((parseInt(overs) * 6) + parseInt((overs * 10) % 10));
         this.Matches[index].Economy = economy;
@@ -2013,7 +2013,7 @@ class NewPlayer {
     }
     matchIndex(number) {
         for (let index = 0; index < this.Matches.length; index++) {
-            if (this.Matches[index].number == number) {
+            if (this.Matches[index].Match == number) {
                 return index;
             }
         }
@@ -2042,7 +2042,7 @@ const apifetch = {
                     if ((day.matchDetailsMap)) {
                         (day.matchDetailsMap.match).forEach(match => {
                             matches.push(match);
-                            if (match.matchInfo.state == "Complete") {
+                            if (match.matchInfo.state.toLowerCase() == "complete") {
                                 matchesId.push(match.matchInfo.matchId);
                             }
                         })
@@ -2051,8 +2051,7 @@ const apifetch = {
                 localStorage.setItem("matches", JSON.stringify(matches));
                 setTimeout(apifetch.Scorecards, 200, matchesId.filter(a => !MatchesIdLS().includes(a)));
             } else if (response.status == 429) {
-                load.loadingmessage(`Error Api Limit over, first ${JSON.parse(localStorage.getItem("scorcards")).length} matches Loaded`, "fa-solid fa-circle-exclamation");
-                setTimeout(() => { load.PlayersData(); load.TeamsData() }, 2500);
+                load.loadingmessage(`Error Api Limit over`, "fa-solid fa-circle-exclamation");
             } else {
                 load.loadingmessage(`Error ${response.status || ""} occur, Reload page`, "fa-solid fa-circle-exclamation fa-beat-fade");
             }
@@ -2069,8 +2068,7 @@ const apifetch = {
                 localStorage.setItem("pointstable", JSON.stringify(pointstable));
                 window.location.reload();
             } else if (response.status == 429) {
-                load.loadingmessage(`Error Api Limit over, first ${JSON.parse(localStorage.getItem("scorcards")).length} matches Loaded`, "fa-solid fa-circle-exclamation");
-                setTimeout(() => { load.PlayersData(); load.TeamsData() }, 2500);
+                load.loadingmessage(`Error Api Limit over`, "fa-solid fa-circle-exclamation");
             } else {
                 load.loadingmessage(`Error ${response.status || ""} occur, Reload page`, "fa-solid fa-circle-exclamation fa-beat-fade");
             }
@@ -2090,8 +2088,7 @@ const apifetch = {
                     load.loadingmessage(`Loading ${result.matchHeader.matchDescription}`);
                     setTimeout(apifetch.Scorecards, 200, ids.filter(a => !MatchesIdLS().includes(a)));
                 } else if (response.status == 429) {
-                    load.loadingmessage(`Error Api Limit over, first ${JSON.parse(localStorage.getItem("scorcards")).length} matches Loaded`, "fa-solid fa-circle-exclamation");
-                    setTimeout(() => { load.PlayersData(); load.TeamsData() }, 2500);
+                    load.loadingmessage(`Error Api Limit over`, "fa-solid fa-circle-exclamation");
                 } else {
                     load.loadingmessage(`Error ${response.status || ""} occur, Reload page`, "fa-solid fa-circle-exclamation fa-beat-fade");
                 }
@@ -2104,12 +2101,14 @@ const apifetch = {
     },
     start: async function () {
         const scorecard = JSON.parse(localStorage.getItem("scorecards")) || [];
-        const match = JSON.parse(localStorage.getItem("matches")) || [];
+        const matches = JSON.parse(localStorage.getItem("matches")) || [];
+        const nextMatchIndex = scorecard.length;
+        const nextMatch = matches[nextMatchIndex] ? matches[nextMatchIndex] : matches[scorecard.length - 1];
         if (!localStorage.getItem("pointstable")) {
-            await apifetch.Pointstable();
+            await this.Pointstable();
         }
-        if (!localStorage.getItem("matches") || (Number(match[scorecard.length].matchInfo.endDate) + 2 * 60 * 60 * 1000) < new Date().getTime()) {
-            await apifetch.Matches();
+        if (!localStorage.getItem("matches") || ((Number(nextMatch.matchInfo.endDate) + 2 * 60 * 60 * 1000) < new Date().getTime() && (nextMatchIndex && nextMatchIndex != matches.length))) {
+            await this.Matches();
         } else {
             load.PlayersData();
             load.TeamsData();
@@ -2119,14 +2118,14 @@ const apifetch = {
 }
 
 const load = {
-    TeamsData: function () {
+    PlayersData: function () {
         if (localStorage.getItem("scorecards")) {
             JSON.parse(localStorage.getItem("scorecards"))
                 .forEach(match => {
-                    const matchNum = match.matchHeader.matchDescription.split(" ")[0].slice(0, -2);
+                    const matchdesc = match.matchHeader.matchDescription;
                     match.scoreCard.forEach(innings => {
-                        findPlayer(innings, "batName", matchNum);
-                        findPlayer(innings, "bowlName", matchNum);
+                        findPlayer(innings, "batName", matchdesc);
+                        findPlayer(innings, "bowlName", matchdesc);
                     });
                 });
             window.addEventListener("load", () => {
@@ -2135,7 +2134,7 @@ const load = {
             })
         }
     },
-    PlayersData: function () {
+    TeamsData: function () {
         JSON.parse(localStorage.getItem("pointstable")).forEach(team => {
             TeamInfo.push(new NewTeam(team));
         });
@@ -2159,7 +2158,7 @@ function MatchesIdLS() {
     return matchesIdLS;
 }
 
-function findPlayer(innings, nameType, matchNum) {
+function findPlayer(innings, nameType, matchdesc) {
     const players = (nameType == "batName") ? innings.batTeamDetails.batsmenData : innings.bowlTeamDetails.bowlersData;
     const team = (nameType == "batName") ? innings.batTeamDetails.batTeamShortName : innings.bowlTeamDetails.bowlTeamShortName;
     const playerNameObj = {}
@@ -2170,15 +2169,15 @@ function findPlayer(innings, nameType, matchNum) {
 
         if (PlayerName(apiPlayerName, team)) {
             (nameType == "batName") ?
-                PlayerName(apiPlayerName, team).updateBatStats(players[name], matchNum) :
-                PlayerName(apiPlayerName, team).updateBowlStats(players[name], matchNum);
+                PlayerName(apiPlayerName, team).updateBatStats(players[name], matchdesc) :
+                PlayerName(apiPlayerName, team).updateBowlStats(players[name], matchdesc);
             playerNameObj[name] = undefined;
         }
     }
     //print players not found in Playersdata
     for (let Name in playerNameObj) {
         if (playerNameObj[Name]) {
-            console.log(playerNameObj[Name]);
+            console.warn(playerNameObj[Name]);
         }
     }
 }

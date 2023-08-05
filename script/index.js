@@ -137,12 +137,12 @@ export function Loadmatches(matches) {
         <span class="name">${match.matchHeader.matchDescription}</span>
         <div class="flex match inner">
             <div class="teams nowrap flex inner">
-                <img src="${teamByLogo(match.matchHeader.matchTeamInfo[0].battingTeamShortName.toLowerCase()).Image().round.src}">
+                <img src="${teamByLogo(match.matchHeader.team1.shortName.toLowerCase()).Image().round.src}">
                 <span>VS</span>
-                <img src="${teamByLogo(match.matchHeader.matchTeamInfo[0].bowlingTeamShortName.toLowerCase()).Image().round.src}">
+                <img src="${teamByLogo(match.matchHeader.team2.shortName.toLowerCase()).Image().round.src}">
             </div>
         </div>
-        <div class="flex result">${match.status}</div>`;
+        <div class="flex result">${match.matchHeader.status}</div>`;
         matchEl.classList = ` flex match team ${WinnerLogo.join("").toLowerCase()}`;
         document.querySelector(".matches").append(matchEl);
     })
